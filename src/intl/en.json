@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "title": "Block & Block - Your freelance developers for Android.",
+    "description": "A team of two Android freelance developers to bring your ideas to life."
+  },
+  "menu": [
+    {
+      "text": "home",
+      "to": "#home"
+    },
+    {
+      "text": "about",
+      "to": "#about"
+    }
+  ]
+}

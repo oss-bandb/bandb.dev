@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "Block & Block - Ihre Freiberufler für die Entwicklung von Android Apps.",
+    "description": "Ein Team von zwei Android Freiberuflern, die Ihre Ideen ins Leben bringen."
+  },
+  "navigation": [
+    {
+      "name": "home",
+      "text": "Start"
+    },
+    {
+      "name": "about",
+      "text": "über uns"
+    },
+    {
+      "name": "services",
+      "text": "leistungen"
+    },
+    {
+      "name": "community",
+      "text": "community"
+    },
+    {
+      "name": "contact",
+      "text": "kontakt"
+    }
+  ]
+}
