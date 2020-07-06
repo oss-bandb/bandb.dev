@@ -17,11 +17,17 @@
     "@fortawesome/react-fontawesome": "^0.1.10",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.23.3",
+    "gatsby-image": "^2.4.12",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^2.3.4",
     "gatsby-plugin-intl": "^0.3.3",
     "gatsby-plugin-react-helmet": "^3.3.4",
     "gatsby-plugin-styled-components": "^3.3.4",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-images": "^3.3.16",
     "gatsby-source-filesystem": "^2.3.11",
+    "gatsby-transformer-remark": "^2.8.22",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
@@ -30,6 +36,11 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
+    "@upstatement/eslint-config": "^0.4.3",
+    "@upstatement/prettier-config": "^0.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-react": "^7.20.3",
     "prettier": "^1.19.1"
   }
 }

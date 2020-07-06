@@ -1,26 +1,43 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import styled from "styled-components"
+import { Section } from "@components"
+import { theme } from "@styles"
+import { colors } from "@configs"
 
-// .home {
-//   min-height: 550px;
-// }
+const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
 
-// .btn-contact {
-//   padding-top: 5rem;
-// }
+const StyledButton = styled(Link)`
+    padding: 10px;
+    background-color: ${theme.colorAccent};
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: ${colors.color};
+    text-decoration: none;
+`
 
-const Home = () => {
-  return (
-    <section id="home" className="home">
-      <div>
-        <h1>Your freelance Android developers</h1>
-        <p>
-          We bring your vision to life. Don't have a clear vision? We can help
-          with that, too.
-        </p>
-        <div className="btnContact"></div>
-      </div>
-    </section>
-  )
+const Home = ({ data }) => {
+    const { frontmatter } = data[0].node
+    return (
+        <Section>
+            <StyledContainer>
+                <h1>{frontmatter.title}</h1>
+                <p>{frontmatter.subtitle}</p>
+                <StyledButton to="/#contact">{frontmatter.action}</StyledButton>
+            </StyledContainer>
+        </Section>
+    )
+}
+
+Home.propTypes = {
+    data: PropTypes.object.isRequired,
 }
 
 export default Home

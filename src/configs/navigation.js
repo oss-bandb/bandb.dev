@@ -1,3 +1,4 @@
+// TODO change to yaml
 const navigation = [
   {
     name: "home",

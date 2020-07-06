@@ -1,32 +1,35 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { useIntl } from "gatsby-plugin-intl"
-import { Config } from "@configs"
+import { config } from "@configs"
 
 const Head = () => {
-  const intl = useIntl()
+    const intl = useIntl()
 
-  return (
-    <Helmet>
-      <html lang={intl.locale} prefix="og: http://ogp.me/ns#" />
-      <title itemProp="name" lang={intl.locale}>
-        {intl.formatMessage({ id: "metadata.title" })}
-      </title>
-      {/*
+    return (
+        <Helmet>
+            <html lang={intl.locale} prefix="og: http://ogp.me/ns#" />
+            <title itemProp="name" lang={intl.locale}>
+                {intl.formatMessage({ id: "metadata.title" })}
+            </title>
+            {/*
        <link rel="shortcut icon" href={favicon} /> }
       <link rel="canonical" href="https://brittanychiang.com" />*/}
 
-      <meta
-        name="description"
-        content={intl.formatMessage({ id: "metadata.description" })}
-      />
-      <meta name="keywords" content={Config.metadata.keywords.join(", ")} />
-      <meta
-        name="google-site-verification"
-        content={Config.metadata.googleVerification}
-      />
+            <meta
+                name="description"
+                content={intl.formatMessage({ id: "metadata.description" })}
+            />
+            <meta
+                name="keywords"
+                content={config.metadata.keywords.join(", ")}
+            />
+            <meta
+                name="google-site-verification"
+                content={config.metadata.googleVerification}
+            />
 
-      {/* TODO
+            {/* TODO
     <meta property="og:title" content={metadata.title} />
     <meta property="og:description" content={metadata.description} />
     <meta property="og:type" content="website" />
@@ -59,8 +62,8 @@ const Head = () => {
     <meta name="theme-color" content={config.colors.navy} />
     
 */}
-    </Helmet>
-  )
+        </Helmet>
+    )
 }
 
 export default Head

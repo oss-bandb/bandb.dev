@@ -1,117 +1,44 @@
 import React from "react"
+import styled from "styled-components"
+import { Section, Profile } from "@components"
+import { theme } from "@styles"
 
-const About = () => {
-  return (
-    <section id="about" class="about">
-      <div>
-        <div>
-          <h2>Who we are</h2>
-        </div>
-        <div>
-          <div>
-            <img
-              src="./../img/dennis_image.jpg"
-              class="img-fluid"
-              alt="Dennis Block - Freelance Android developer"
-            />
-            <div>
-              <div>
-                <p>
-                  Dennis Block <span class="degree">M. Sc.</span>
-                </p>
-                <div>
-                  <a
-                    href="https://github.com/DennisBlock"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a
-                    href="https://www.xing.com/profile/Dennis_Block4"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fab fa-xing"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/dennis-block-5383a318a/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    href="./assets/Lebenslauf_Freelance_DennisBlock.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="far fa-file-pdf"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <img
-              src="./../img/gregor_image.jpeg"
-              class="img-fluid"
-              alt="Gregor Block - Freelance Android developer"
-            />
-            <div>
-              <div>
-                <p>
-                  Gregor Block <span class="degree">M. Sc.</span>
-                </p>
-                <div>
-                  <a
-                    href="https://github.com/GregorBlock"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a
-                    href="https://www.xing.com/profile/Gregor_Block"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fab fa-xing"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/gregor-block-481760176/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    href="./assets/Lebenslauf_Freelance_GregorBlock.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i class="far fa-file-pdf"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <p>
-              Our journey to become IT-professionals started at the same school.
-              After our graduation we both studied applied computer science to
-              first get the bachelors and then the masters degree. While
-              studying we did a lot of different projects together. Most of them
-              were Android related. Our first app was for Android 2.1. While
-              studying fulltime for our masters we worked as Android developers
-              on the side and gained even more experience, before we started as
-              freelancers after our graduation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+const StyledSection = styled(Section)`
+    background-color: ${theme.colorAccent};
+    width: 100%;
+`
+
+const StyledProfiles = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+
+const StyledDescription = styled.div`
+    padding-bottom: 45px;
+    font-weight: 600;
+    font-size: 1.1rem;
+`
+
+const About = ({ data, profiles }) => {
+    console.log("data", data)
+    console.log("profiles", profiles)
+    const { html } = data[0].node
+    const { title } = html
+    return (
+        <StyledSection title={title}>
+            <StyledDescription>
+                {profiles.map((profile, i) => (
+                    // Index as key is generally a bad idea, but shouldn't matter in this case
+                    <Profile key={i} profile={profile} />
+                ))}
+            </StyledDescription>
+            <StyledDescription
+                dangerouslySetInnerHTML={{ __html: html }}
+            ></StyledDescription>
+        </StyledSection>
+    )
 }
 
 export default About
