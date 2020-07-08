@@ -30,8 +30,8 @@ const StyledImage = styled(Img)`
 
 const StyledResumeButton = styled.a`
     padding: 5px;
-    background-color: ${theme.backgroundColor};
-    border: 2px solid ${theme.backgroundColor};
+    background-color: transparent;
+    border: 2px solid ${theme.color};
     border-radius: 5px;
     font-size: 1.2em;
     width: 50%;

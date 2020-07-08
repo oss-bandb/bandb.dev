@@ -4,10 +4,9 @@ import { Section, Service } from "@components"
 import { theme } from "@styles"
 
 const StyledSection = styled(Section)`
+    display: flex;
     justify-content: center;
     align-items: center;
-    align-items: flex-start;
-    background-color: ${theme.colorAccent};
     width: 100%;
 `
 
