@@ -16,7 +16,7 @@ const IndexPage = ({ location, data }) => {
             <StyledContainer>
                 <Home data={data.home.edges} />
                 <About data={data.about.edges} profiles={data.profiles.edges} />
-                <Services />
+                <Services data={data.services.edges} />
                 <Community />
                 <Contact />
             </StyledContainer>
@@ -70,6 +70,21 @@ export const query = graphql`
                             github
                             xing
                             linkedin
+                        }
+                    }
+                }
+            }
+        }
+        services: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/services/" } }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        content {
+                            description
+                            key
                         }
                     }
                 }

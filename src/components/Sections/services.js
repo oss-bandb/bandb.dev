@@ -1,59 +1,37 @@
 import React from "react"
-import { Section } from "@components"
+import styled from "styled-components"
+import { Section, Service } from "@components"
+import { theme } from "@styles"
 
-const Services = () => (
-    <Section>
-        <div>
-            <div>
-                <h2>What we do</h2>
-            </div>
+const StyledSection = styled(Section)`
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    background-color: ${theme.colorAccent};
+    width: 100%;
+`
 
-            <div>
-                <div>
-                    <div>
-                        <div>Development</div>
-                        <div>
-                            We work with the latest tech-stack to create modern
-                            android application architecture that is loosely
-                            coupled, scalable, maintainable and testable.
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div>Maintenance</div>
-                        <div>
-                            Our maintenance service improves continuously your
-                            applications quality after the release to give your
-                            users the best possible experience.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <div>
-                        <div>Consulting</div>
-                        <div>
-                            We support you in optimising the strategy for your
-                            project by identifying and analysing weak points and
-                            developing solutions.
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div>Concepting</div>
-                        <div>
-                            One of our strengths is the user-oriented design of
-                            mobile apps. Our focus is on usability to deliver
-                            the best possible user experience.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </Section>
-)
+const StyledGrid = styled.div`
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 15px;
+`
+
+const Services = ({ data }) => {
+    const { title, content } = data[0].node.frontmatter
+    console.log("title", title)
+    console.log("content", content)
+    return (
+        <StyledSection title={title}>
+            <StyledGrid>
+                {content.map((service, i) => (
+                    // Index as key is generally a bad idea, but shouldn't matter in this case
+                    <Service key={i} service={service} />
+                ))}
+            </StyledGrid>
+        </StyledSection>
+    )
+}
 
 export default Services
