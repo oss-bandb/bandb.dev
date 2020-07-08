@@ -1,62 +1,93 @@
 import React from "react"
+import Img from "gatsby-image"
 import styled from "styled-components"
+import PropTypes from "prop-types"
+import { theme } from "@styles"
+import { colors } from "@configs"
+import { FormattedIcon } from "@components/icons"
 
 const StyledContainer = styled.div`
     display: flex;
-    background-color: #232326;
-    min-width: 275px;
-    max-width: 275px;
-    min-height: 375px;
-    max-height: 375px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 275px;
+`
+
+const StyledName = styled.p`
+    font-size: 1.6em;
+    font-weight: 700;
+`
+
+const Degree = styled.span`
+    font-size: 0.8rem;
+`
+
+const StyledImage = styled(Img)`
+    border-radius: 50%;
+    width: 100%;
+`
+
+const StyledResumeButton = styled.a`
+    padding: 5px;
+    background-color: ${theme.backgroundColor};
+    border: 2px solid ${theme.backgroundColor};
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 50%;
+    color: ${colors.color};
+    text-decoration: none;
+    text-align: center;
+    margin: 10px;
+`
+
+const SocialLinks = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+`
+
+const SocialLink = styled.a`
+    margin: 0.6em;
+
+    svg {
+        height: 1em;
+        width: auto;
+        fill: ${theme.color};
+    }
 `
 
 const Profile = ({ profile }) => {
-    const { name, title, social } = profile.node.frontmatter
+    const { name, degree, image, resume, social } = profile.node.frontmatter
     console.log("profile", profile)
     return (
         <StyledContainer>
-            <div>
-                    <img
-                        src="./../img/dennis_image.jpg"
-                        class="img-fluid"
-                        alt="Dennis Block - Freelance Android developer"
-                    />
-                </div>
-            <p>
-                {name} <span class="degree">{title}</span>
-            </p>
-            <div>
-                <a
-                    href="https://github.com/DennisBlock"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <i class="fab fa-github"></i>
-                </a>
-                <a
-                    href="https://www.xing.com/profile/Dennis_Block4"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <i class="fab fa-xing"></i>
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/dennis-block-5383a318a/"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a
-                    href="./assets/Lebenslauf_Freelance_DennisBlock.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <i class="far fa-file-pdf"></i>
-                </a>
-            </div>
+            <StyledImage
+                fluid={image.childImageSharp.fluid}
+                alt={name + " Freelance Android developer"}
+            />
+            <StyledName>
+                {name} <Degree>{degree}</Degree>
+            </StyledName>
+            {/* TODO: i18n */}
+            <StyledResumeButton href={resume.publicURL}>
+                Resume
+            </StyledResumeButton>
+
+            <SocialLinks>
+                {social.map(({ link, icon }, index) => (
+                    <SocialLink key={index} href={link}>
+                        <FormattedIcon name={icon} />
+                    </SocialLink>
+                ))}
+            </SocialLinks>
         </StyledContainer>
     )
+}
+
+Profile.propTypes = {
+    profile: PropTypes.object.isRequired,
 }
 
 export default Profile

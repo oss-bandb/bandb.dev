@@ -3,6 +3,9 @@ const path = require("path")
 module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-styled-components`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-plugin-intl`,
             options: {
@@ -34,7 +37,18 @@ module.exports = {
         {
             resolve: `gatsby-transformer-remark`,
             options: {
-                plugins: [],
+                plugins: [
+                    {
+                        // https://www.gatsbyjs.org/packages/gatsby-remark-images
+                        resolve: "gatsby-remark-images",
+                        options: {
+                            maxWidth: 700,
+                            linkImagesToOriginal: true,
+                            quality: 90,
+                            tracedSVG: { color: "#64ffda" },
+                        },
+                    },
+                ],
             },
         },
     ],

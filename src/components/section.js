@@ -8,21 +8,25 @@ const StyledSection = styled.section`
     /* justify-content: center;
     align-items: center; */
     padding: 50px 0px;
-    max-width: 1000px;
+    /* max-width: 1000px; */
+    width: 100%;
 `
 
-const SectionTitle = styled.h2`
+const SectionTitle = styled.h1`
     margin-bottom: 60px;
     text-align: center;
     font-weight: 600;
+    font-size: 2em;
 `
 
-const Section = ({ children, title }) => (
-    <StyledSection>
-        <SectionTitle>{title}</SectionTitle>
-        <div>{children}</div>
-    </StyledSection>
-)
+const Section = ({ className, children, title }) => {
+    return (
+        <StyledSection className={className}>
+            {title && <SectionTitle>{title}</SectionTitle>}
+            {children}
+        </StyledSection>
+    )
+}
 
 Section.propTypes = {
     title: PropTypes.string,

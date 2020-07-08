@@ -13,6 +13,7 @@ const StyledContainer = styled.header`
     margin: 0;
     padding: 15px 100px;
     background-color: ${colors.backgroundColor};
+    z-index: 11;
 `
 
 const Nav = styled.nav`
@@ -57,7 +58,7 @@ const Navigation = () => {
                 </Logo>
                 <NavList>
                     {NavigationConfig.map(({ name, to }, i) => (
-                        <NavItem>
+                        <NavItem key={name}>
                             <NavLink to={to}>{name}</NavLink>
                         </NavItem>
                     ))}
