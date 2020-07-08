@@ -1,10 +1,13 @@
 ---
 name: "Gregor Block"
-title: "M. Sc."
-image: "./gregor_image.jpg"
-resume: "./Lebenslauf_GregorBlock.pdf"
+degree: "M. Sc."
+image: ./gregor_image.jpeg
+resume: ./Lebenslauf_GregorBlock.pdf
 social:
-    github: "https://github.com/GregorBlock"
-    xing: "https://www.xing.com/profile/Gregor_Block"
-    linkedin: "https://www.linkedin.com/in/gregor-block-481760176/"
+    - link: "https://github.com/GregorBlock"
+      icon: "github"
+    - link: "https://www.xing.com/profile/Gregor_Block"
+      icon: "xing"
+    - link: "https://www.linkedin.com/in/gregor-block-481760176/"
+      icon: "linkedin"
 ---

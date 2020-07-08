@@ -6,7 +6,8 @@ import { Section } from "@components"
 import { theme } from "@styles"
 import { colors } from "@configs"
 
-const StyledContainer = styled.div`
+const StyledSection = styled(Section)`
+    min-height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +16,7 @@ const StyledContainer = styled.div`
 
 const StyledButton = styled(Link)`
     padding: 10px;
+    margin-top: 5em;
     background-color: ${theme.colorAccent};
     border: none;
     border-radius: 5px;
@@ -23,21 +25,27 @@ const StyledButton = styled(Link)`
     text-decoration: none;
 `
 
+const Title = styled.h1`
+    font-size: 2.5em;
+`
+
+const Subtitle = styled.p`
+    margin-top: 0;
+`
+
 const Home = ({ data }) => {
-    const { frontmatter } = data[0].node
+    const { title, subtitle, action } = data[0].node.frontmatter
     return (
-        <Section>
-            <StyledContainer>
-                <h1>{frontmatter.title}</h1>
-                <p>{frontmatter.subtitle}</p>
-                <StyledButton to="/#contact">{frontmatter.action}</StyledButton>
-            </StyledContainer>
-        </Section>
+        <StyledSection>
+            <Title>{title}</Title>
+            <Subtitle>{subtitle}</Subtitle>
+            <StyledButton to="/#contact">{action}</StyledButton>
+        </StyledSection>
     )
 }
 
 Home.propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired,
 }
 
 export default Home

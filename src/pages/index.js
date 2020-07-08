@@ -1,25 +1,16 @@
 import React from "react"
-import styled from "styled-components"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { Layout, Home, About, Services, Community, Contact } from "@components"
 
-const StyledContainer = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-`
-
 const IndexPage = ({ location, data }) => {
     return (
         <Layout>
-            <StyledContainer>
-                <Home data={data.home.edges} />
-                <About data={data.about.edges} profiles={data.profiles.edges} />
-                <Services />
-                <Community />
-                <Contact />
-            </StyledContainer>
+            <Home data={data.home.edges} />
+            <About data={data.about.edges} profiles={data.profiles.edges} />
+            <Services />
+            <Community />
+            <Contact />
         </Layout>
     )
 }
@@ -65,11 +56,20 @@ export const query = graphql`
                 node {
                     frontmatter {
                         name
-                        title
+                        degree
+                        image {
+                            childImageSharp {
+                                fluid(maxWidth: 700, quality: 90) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                            }
+                        }
+                        resume {
+                            publicURL
+                        }
                         social {
-                            github
-                            xing
-                            linkedin
+                            link
+                            icon
                         }
                     }
                 }
