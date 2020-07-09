@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import { theme } from "@styles"
+import { theme, device } from "@styles"
 import { colors } from "@configs"
 import { FormattedIcon } from "@components/icons"
 
@@ -12,6 +12,12 @@ const StyledContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     width: 275px;
+
+    @media ${device.smallDown} {
+        &:not(:last-child) {
+            padding-bottom: 32px;
+        }
+    }
 `
 
 const StyledName = styled.p`
