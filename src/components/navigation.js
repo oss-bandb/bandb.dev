@@ -1,6 +1,6 @@
 import React from "react"
-import { Navigation as NavigationConfig, colors } from "@configs"
-import { Link } from "gatsby"
+import { colors } from "@configs"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { theme } from "@styles"
 
@@ -50,6 +50,18 @@ const NavLink = styled(Link)`
 `
 
 const Navigation = () => {
+    const data = useStaticQuery(graphql`
+        {
+            dataYaml {
+                items {
+                    name
+                    to
+                }
+            }
+        }
+    `)
+    const navItems = data.dataYaml.items
+
     return (
         <StyledContainer>
             <Nav>
@@ -57,7 +69,7 @@ const Navigation = () => {
                     <NavLink to="/">Block & Block</NavLink>
                 </Logo>
                 <NavList>
-                    {NavigationConfig.map(({ name, to }, i) => (
+                    {navItems.map(({ name, to }, i) => (
                         <NavItem key={name}>
                             <NavLink to={to}>{name}</NavLink>
                         </NavItem>
