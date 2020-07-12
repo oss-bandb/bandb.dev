@@ -66,7 +66,6 @@ const SocialLink = styled.a`
 
 const Profile = ({ profile }) => {
     const { name, degree, image, resume, social } = profile.node.frontmatter
-    console.log("profile", profile)
     return (
         <StyledContainer>
             <StyledImage

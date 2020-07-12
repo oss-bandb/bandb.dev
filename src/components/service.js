@@ -14,7 +14,6 @@ const StyledContainer = styled.div`
 `
 
 const Service = ({ service }) => {
-    console.log("service", service)
     return (
         <StyledContainer>
             <p><strong>{service.key}</strong></p>
