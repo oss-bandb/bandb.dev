@@ -1,6 +1,6 @@
 import React from "react"
 import { Section } from "@components"
 
-const Community = () => <Section>Community</Section>
+const Community = () => <Section id="community">Community</Section>
 
 export default Community

@@ -13,7 +13,7 @@ module.exports = {
                 path: `${__dirname}/src/intl`,
                 languages: [`en`, `de`],
                 defaultLanguage: `en`,
-                redirect: true,
+                redirect: false,
             },
         },
         {

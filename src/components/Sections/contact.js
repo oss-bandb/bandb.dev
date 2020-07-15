@@ -2,7 +2,7 @@ import React from "react"
 import { Section } from "@components"
 
 const Contact = () => (
-    <Section title="Send us a message">
+    <Section title="Send us a message" id="contact">
         <div>
             <div>
                 <div>

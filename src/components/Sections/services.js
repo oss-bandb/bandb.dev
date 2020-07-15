@@ -19,10 +19,8 @@ const StyledGrid = styled.div`
 
 const Services = ({ data }) => {
     const { title, content } = data[0].node.frontmatter
-    console.log("title", title)
-    console.log("content", content)
     return (
-        <StyledSection title={title}>
+        <StyledSection title={title} id="services">
             <StyledGrid>
                 {content.map((service, i) => (
                     // Index as key is generally a bad idea, but shouldn't matter in this case

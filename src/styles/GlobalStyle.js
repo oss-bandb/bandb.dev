@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components"
-import { colors } from "@configs"
+import { theme } from "@styles"
+
+console.log("asd", theme)
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -8,10 +10,10 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: sans-serif;
-  background-color: ${colors.backgroundColor};
+  background-color: ${theme.backgroundColor};
   margin: 0;
   padding: 0;
-  color: ${colors.color};
+  color: ${theme.color};
 }
 `
 
