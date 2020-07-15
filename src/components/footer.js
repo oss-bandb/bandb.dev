@@ -102,7 +102,7 @@ const Footer = () => {
                         NRW, Germany
                     </div>
                     <div>
-                        <strong>contact[at]bandb.dev</strong>
+                        <strong>contact@bandb.dev</strong>
                     </div>
                 </ColumnContainer>
             </InfoContainer>

@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { Section } from "@components"
 import { theme } from "@styles"
-import { colors } from "@configs"
 
 const StyledSection = styled(Section)`
     display: flex;
@@ -18,7 +17,7 @@ const StyledButton = styled.a`
     border: none;
     border-radius: 5px;
     font-size: 1.2em;
-    color: ${colors.color};
+    color: ${theme.color};
     text-decoration: none;
 `
 const Title = styled.h1`
