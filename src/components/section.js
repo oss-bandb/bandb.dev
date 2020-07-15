@@ -16,11 +16,12 @@ const SectionTitle = styled.h1`
     font-size: 2em;
 `
 
-const Section = ({ className, children, title }) => {
+const Section = props => {
+    const { title, id, className } = props
     return (
-        <StyledSection className={className}>
+        <StyledSection id={id} className={className}>
             {title && <SectionTitle>{title}</SectionTitle>}
-            {children}
+            {props.children}
         </StyledSection>
     )
 }

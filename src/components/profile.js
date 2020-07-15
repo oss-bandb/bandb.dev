@@ -3,7 +3,6 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { theme, device } from "@styles"
-import { colors } from "@configs"
 import { FormattedIcon } from "@components/icons"
 
 const StyledContainer = styled.div`
@@ -13,7 +12,7 @@ const StyledContainer = styled.div`
     align-items: center;
     width: 275px;
 
-    @media ${device.smallDown} {
+    @media screen and (${device.smallDown}) {
         &:not(:last-child) {
             padding-bottom: 32px;
         }
@@ -41,7 +40,7 @@ const StyledResumeButton = styled.a`
     border-radius: 5px;
     font-size: 1.2em;
     width: 50%;
-    color: ${colors.color};
+    color: ${theme.color};
     text-decoration: none;
     text-align: center;
     margin: 10px;

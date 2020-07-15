@@ -33,7 +33,7 @@ const About = ({ data, profiles }) => {
     const { frontmatter, html } = data[0].node
     const { title } = frontmatter
     return (
-        <StyledSection title={title}>
+        <StyledSection title={title} id="about">
             <StyledContainer>
                 <StyledProfiles>
                     {profiles.map((profile, i) => (

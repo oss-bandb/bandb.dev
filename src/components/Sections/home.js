@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { Section } from "@components"
 import { theme } from "@styles"
-import { colors } from "@configs"
 
 const StyledSection = styled(Section)`
     min-height: 550px;
@@ -21,10 +20,11 @@ const StyledButton = styled(Link)`
     border: none;
     border-radius: 5px;
     font-size: 1.2em;
-    color: ${colors.color};
+    color: ${theme.color};
     text-decoration: none;
 `
 
+// TODO move to GlobalStyle?
 const Title = styled.h1`
     font-size: 2.5em;
 `
@@ -36,7 +36,7 @@ const Subtitle = styled.p`
 const Home = ({ data }) => {
     const { title, subtitle, action } = data[0].node.frontmatter
     return (
-        <StyledSection>
+        <StyledSection id="home">
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
             <StyledButton to="/#contact">{action}</StyledButton>

@@ -87,7 +87,7 @@ const Community = ({ data }) => {
     }, [])
 
     return (
-        <StyledSection title={title}>
+        <StyledSection title={title} id="community">
             <StyledGrid>
                 <StyledContainer>
                     <StyledImage

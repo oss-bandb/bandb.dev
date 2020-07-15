@@ -24,7 +24,6 @@ const StyledButton = styled.a`
 const Title = styled.h1`
     font-size: 2.5em;
 `
-
 const StyledContent = styled.div`
     text-align: center;
 `
@@ -32,7 +31,7 @@ const Contact = ({ data }) => {
     const { frontmatter, html } = data[0].node
     const { title, action } = frontmatter
     return (
-        <StyledSection title={title}>
+        <StyledSection title={title} id="contact">
             <StyledContent
                 dangerouslySetInnerHTML={{ __html: html }}
             ></StyledContent>

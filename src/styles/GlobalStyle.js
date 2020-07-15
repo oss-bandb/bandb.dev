@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import { colors } from "@configs"
 import { theme } from "@styles"
 
 const GlobalStyle = createGlobalStyle`
@@ -9,13 +8,13 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: sans-serif;
-  background-color: ${colors.backgroundColor};
+  background-color: ${theme.backgroundColor};
   margin: 0;
   line-height: 1.5;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   padding: 0;
-  color: ${colors.color};
+  color: ${theme.color};
 }
 
 a {
@@ -27,7 +26,7 @@ a {
   cursor: pointer;
   &:hover,
   &:focus {
-    color: ${colors.color};
+    color: ${theme.color};
   }
 }
 `

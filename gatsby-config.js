@@ -6,13 +6,14 @@ module.exports = {
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
+        `gatsby-transformer-yaml`,
         {
             resolve: `gatsby-plugin-intl`,
             options: {
                 path: `${__dirname}/src/intl`,
                 languages: [`en`, `de`],
                 defaultLanguage: `en`,
-                redirect: true,
+                redirect: false,
             },
         },
         {
