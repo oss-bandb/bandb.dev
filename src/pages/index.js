@@ -9,8 +9,8 @@ const IndexPage = ({ location, data }) => {
             <Home data={data.home.edges} />
             <About data={data.about.edges} profiles={data.profiles.edges} />
             <Services data={data.services.edges} />
-            <Community />
-            <Contact />
+            <Community data={data.community.edges} />
+            <Contact data={data.contact.edges} />
         </Layout>
     )
 }
@@ -87,6 +87,41 @@ export const query = graphql`
                             key
                         }
                     }
+                }
+            }
+        }
+        community: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/community/" } }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        link
+                        icon
+                        image {
+                            childImageSharp {
+                                fluid(maxWidth: 700, quality: 90) {
+                                    ...GatsbyImageSharpFluid_withWebp
+                                }
+                            }
+                        }
+                    }
+                    html
+                }
+            }
+        }
+        contact: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/contact/" } }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        subtitle
+                        action
+                    }
+                    html
                 }
             }
         }

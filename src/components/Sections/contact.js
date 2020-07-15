@@ -1,25 +1,46 @@
 import React from "react"
+import styled from "styled-components"
 import { Section } from "@components"
+import { theme } from "@styles"
+import { colors } from "@configs"
 
-const Contact = () => (
-    <Section title="Send us a message">
-        <div>
-            <div>
-                <div>
-                    <h2>Don't let your ideas be just ideas.</h2>
-                    <p>
-                        Want a new app from scratch, maybe a new feature or a
-                        bug fix in your existing app? Or just want to send us a
-                        friendly message? Don't hesitate to contact us.
-                    </p>
-                </div>
+const StyledSection = styled(Section)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+`
+const StyledButton = styled.a`
+    padding: 10px;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    background-color: ${theme.colorAccent};
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: ${colors.color};
+    text-decoration: none;
+`
+const Title = styled.h1`
+    font-size: 2.5em;
+`
 
-                <div>
-                    <a href="mailto:contact@bandb.dev">Get in touch!</a>
-                </div>
-            </div>
-        </div>
-    </Section>
-)
+const StyledContent = styled.div`
+    text-align: center;
+`
+const Contact = ({ data }) => {
+    const { frontmatter, html } = data[0].node
+    const { title, action } = frontmatter
+    return (
+        <StyledSection title={title}>
+            <StyledContent
+                dangerouslySetInnerHTML={{ __html: html }}
+            ></StyledContent>
+            <StyledButton href={`mailto:contact@bandb.dev`}>
+                {action}
+            </StyledButton>
+        </StyledSection>
+    )
+}
 
 export default Contact

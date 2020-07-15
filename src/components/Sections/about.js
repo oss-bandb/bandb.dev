@@ -20,9 +20,6 @@ const StyledProfiles = styled.div`
 
 const StyledDescription = styled.div`
     padding-bottom: 45px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-align: center;
     margin: 1.5em;
 `
 

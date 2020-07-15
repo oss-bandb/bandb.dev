@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Section, Service } from "@components"
-import { theme } from "@styles"
 
 const StyledSection = styled(Section)`
     display: flex;
@@ -19,8 +18,6 @@ const StyledGrid = styled.div`
 
 const Services = ({ data }) => {
     const { title, content } = data[0].node.frontmatter
-    console.log("title", title)
-    console.log("content", content)
     return (
         <StyledSection title={title}>
             <StyledGrid>
