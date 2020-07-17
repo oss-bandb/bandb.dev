@@ -5,12 +5,12 @@ import styled from "styled-components"
 const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
-    padding: 50px 0px;
     width: 100%;
+    padding: 1.5rem;
 `
 
 const SectionTitle = styled.h1`
-    margin-bottom: 60px;
+    margin-bottom: 1rem;
     text-align: center;
     font-weight: 600;
     font-size: 2em;

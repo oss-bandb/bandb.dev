@@ -10,7 +10,6 @@ const StyledSection = styled(Section)`
 `
 
 const StyledGrid = styled.div`
-    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 15px;

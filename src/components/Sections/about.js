@@ -20,13 +20,11 @@ const StyledProfiles = styled.div`
 
 const StyledDescription = styled.div`
     padding-bottom: 45px;
-    margin: 1.5em;
 `
 
 const StyledContainer = styled(Container)`
     display: flex;
     flex-direction: column;
-    margin: 10px;
 `
 
 const About = ({ data, profiles }) => {
