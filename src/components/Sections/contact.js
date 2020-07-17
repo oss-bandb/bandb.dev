@@ -20,9 +20,7 @@ const StyledButton = styled.a`
     color: ${theme.color};
     text-decoration: none;
 `
-const Title = styled.h1`
-    font-size: 2.5em;
-`
+
 const StyledContent = styled.div`
     text-align: center;
 `
