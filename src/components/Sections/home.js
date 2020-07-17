@@ -11,6 +11,7 @@ const StyledSection = styled(Section)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 `
 
 const StyledButton = styled(Link)`
