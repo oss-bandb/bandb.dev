@@ -6,14 +6,14 @@ const media = {
 }
 
 const device = {
-    smallUp: `(min-width: ${media.small})`,
-    mediumUp: `(min-width: ${media.medium})`,
-    largeUp: `(min-width: ${media.large})`,
-    xlargeUp: `(min-width: ${media.xlarge})`,
-    smallDown: `(max-width: ${media.small})`,
-    mediumDown: `(max-width: ${media.medium})`,
-    largeDown: `(max-width: ${media.large})`,
-    xlargeDown: `(max-width: ${media.xlarge})`,
+    smallUp: `screen and (min-width: ${media.small})`,
+    mediumUp: `screen and (min-width: ${media.medium})`,
+    largeUp: `screen and (min-width: ${media.large})`,
+    xlargeUp: `screen and (min-width: ${media.xlarge})`,
+    smallDown: `screen and (max-width: ${media.small})`,
+    mediumDown: `screen and (max-width: ${media.medium})`,
+    largeDown: `screen and (max-width: ${media.large})`,
+    xlargeDown: `screen and (max-width: ${media.xlarge})`,
 }
 
 export default media

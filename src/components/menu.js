@@ -11,14 +11,26 @@ const StyledContainer = styled.div`
     right: 0;
     width: 100%;
     height: 100vh;
-    z-index: 10;
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform: translateX(${props => (props.open ? 0 : 100)}vw);
-    visibility: ${props => (props.open ? "visible" : "hidden")};
+    background-color: ${props =>
+        props.menuOpen ? `rgba(10, 10, 10, 0.75)` : `transparent`};
+    visibility: ${props => (props.menuOpen ? "visible" : "hidden")};
+    z-index: 10;
 
-    @media screen and (${device.largeDown}) {
+    @media ${device.largeDown} {
         display: flex;
     }
+`
+const Nav = styled.nav`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 0.2em;
+    z-index: 12;
 `
 
 const Sidebar = styled.aside`
@@ -28,18 +40,17 @@ const Sidebar = styled.aside`
     flex-direction: column;
     background-color: ${theme.lightGrey};
     padding: 50px;
-    width: 50vw;
+    width: 40vw;
     height: 100%;
     position: relative;
     right: 0;
     margin-left: auto;
-    /* font-family: ${fonts.SFMono}; */
-    /* box-shadow: -10px 0px 30px -15px ${colors.shadowNavy}; */
-    /* ${media.thone`padding: 25px;`};
-    ${media.phablet`width: 75vw;`};
-    ${media.tiny`padding: 10px;`}; */
-    @media screen and (${device.smallDown}) {
-        width: 75vw;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
+    visibility: ${props => (props.menuOpen ? "visible" : "hidden")};
+
+    @media ${device.smallDown} {
+        width: 50vw;
     }
 `
 
@@ -55,21 +66,29 @@ const NavLink = styled(Link)`
     color: ${theme.color};
     text-decoration: none;
 `
-const Menu = ({ navItems, open }) => {
+const Menu = ({ navItems, menuOpen, toggleMenu }) => {
     return (
         <StyledContainer
-            open={open}
-            tabIndex={open ? 1 : -1}
-            aria-hidden={!open}
+            menuOpen={menuOpen}
+            tabIndex={menuOpen ? 1 : -1}
+            aria-hidden={!menuOpen}
         >
-            <Sidebar>
-                <NavList>
-                    {navItems.map(({ name, to }, i) => (
-                        <li key={name}>
-                            <NavLink to={to}>{name}</NavLink>
-                        </li>
-                    ))}
-                </NavList>
+            <Sidebar
+                menuOpen={menuOpen}
+                tabIndex={menuOpen ? 1 : -1}
+                aria-hidden={!menuOpen}
+            >
+                <Nav>
+                    <NavList>
+                        {navItems.map(({ name, to }, i) => (
+                            <li key={name}>
+                                <NavLink to={to} onClick={toggleMenu}>
+                                    {name}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </NavList>
+                </Nav>
             </Sidebar>
         </StyledContainer>
     )
