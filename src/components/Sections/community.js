@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Section } from "@components"
-import { Container, theme } from "@styles"
+import { theme } from "@styles"
 import { FormattedIcon } from "@components/icons"
 
 const StyledSection = styled(Section)`
@@ -34,15 +34,6 @@ const StyledDescription = styled.div`
 const StyledImage = styled(Img)`
     width: 100%;
 `
-const SocialLink = styled.a`
-    margin: 0.6em;
-
-    svg {
-        height: 32px;
-        width: 32px;
-        fill: ${theme.color};
-    }
-`
 const StyledGitHubLink = styled.a`
     text-decoration: none;
     color: ${theme.color};
@@ -66,7 +57,7 @@ const StyledGitHubInfo = styled.div`
 
 const Community = ({ data }) => {
     const { frontmatter, html } = data[0].node
-    const { title, link, icon, image } = frontmatter
+    const { title, image } = frontmatter
     const [githubInfo, setGitHubInfo] = useState({
         stars: null,
         forks: null,
@@ -102,8 +93,6 @@ const Community = ({ data }) => {
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                     >
-                        {/* <div>Designed &amp; Built by Brittany Chiang</div> */}
-
                         {githubInfo.stars && githubInfo.forks && (
                             <StyledGitHubInfo>
                                 <span>

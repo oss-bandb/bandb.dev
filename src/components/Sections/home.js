@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import { Section } from "@components"
 import { theme } from "@styles"
@@ -14,7 +13,7 @@ const StyledSection = styled(Section)`
     text-align: center;
 `
 
-const StyledButton = styled(Link)`
+const StyledButton = styled.a`
     padding: 10px;
     margin-top: 5em;
     background-color: ${theme.colorAccent};
@@ -40,7 +39,9 @@ const Home = ({ data }) => {
         <StyledSection id="home">
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
-            <StyledButton to="/#contact">{action}</StyledButton>
+            <StyledButton href={`mailto:contact@bandb.dev`}>
+                {action}
+            </StyledButton>
         </StyledSection>
     )
 }

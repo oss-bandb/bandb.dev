@@ -5,9 +5,11 @@ import { theme } from "@styles"
 
 const StyledSection = styled(Section)`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    text-align: center;
 `
 const StyledButton = styled.a`
     padding: 10px;

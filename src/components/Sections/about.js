@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Section, Profile } from "@components"
-import { Container, theme } from "@styles"
+import { theme } from "@styles"
 
 const StyledSection = styled(Section)`
     background-color: ${theme.colorAccent};
@@ -22,27 +22,20 @@ const StyledDescription = styled.div`
     padding-bottom: 45px;
 `
 
-const StyledContainer = styled(Container)`
-    display: flex;
-    flex-direction: column;
-`
-
 const About = ({ data, profiles }) => {
     const { frontmatter, html } = data[0].node
     const { title } = frontmatter
     return (
         <StyledSection title={title} id="about">
-            <StyledContainer>
-                <StyledProfiles>
-                    {profiles.map((profile, i) => (
-                        // Index as key is generally a bad idea, but shouldn't matter in this case
-                        <Profile key={i} profile={profile} />
-                    ))}
-                </StyledProfiles>
-                <StyledDescription
-                    dangerouslySetInnerHTML={{ __html: html }}
-                ></StyledDescription>
-            </StyledContainer>
+            <StyledProfiles>
+                {profiles.map((profile, i) => (
+                    // Index as key is generally a bad idea, but shouldn't matter in this case
+                    <Profile key={i} profile={profile} />
+                ))}
+            </StyledProfiles>
+            <StyledDescription
+                dangerouslySetInnerHTML={{ __html: html }}
+            ></StyledDescription>
         </StyledSection>
     )
 }
