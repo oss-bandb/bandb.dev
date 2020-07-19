@@ -10,7 +10,8 @@ const StyledContainer = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 275px;
+    width: 300px;
+    padding: 15px;
 
     @media screen and (${device.smallDown}) {
         &:not(:last-child) {
@@ -31,6 +32,7 @@ const Degree = styled.span`
 const StyledImage = styled(Img)`
     border-radius: 50%;
     width: 100%;
+    margin-bottom: 30px;
 `
 
 const StyledResumeButton = styled.a`
