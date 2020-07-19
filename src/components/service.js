@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { theme } from "@styles"
 
 const StyledContainer = styled.div`
     display: flex;
@@ -10,7 +11,7 @@ const StyledContainer = styled.div`
     position: relative;
     padding: 2rem 1.75rem;
     height: 100%;
-    background-color: #232326;
+    background-color: ${theme.lightGrey};
 `
 
 const StyledTitle = styled.div`
