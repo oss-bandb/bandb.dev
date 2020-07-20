@@ -14,7 +14,7 @@ module.exports = {
             " app developer",
         ],
     },
-    srollReveal: (delay = 200) => ({
+    scrollReveal: (delay = 200) => ({
         origin: "bottom",
         distance: "50px",
         duration: 500,
@@ -29,6 +29,7 @@ module.exports = {
         viewFactor: 0.25,
         viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     }),
+    scrollRevealDelay: 100,
 }
 
 // export default config

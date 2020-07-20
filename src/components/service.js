@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import styled from "styled-components"
 import { theme } from "@styles"
 
@@ -19,13 +19,13 @@ const StyledTitle = styled.div`
     font-weight: 600;
 `
 
-const Service = ({ service }) => {
+const Service = forwardRef(({ service }, ref) => {
     return (
-        <StyledContainer>
+        <StyledContainer ref={ref}>
             <StyledTitle>{service.key}</StyledTitle>
             <p>{service.description}</p>
         </StyledContainer>
     )
-}
+})
 
 export default Service

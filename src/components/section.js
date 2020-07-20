@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import scrollReveal from "@utils/scrollreveal"
-import { config } from "@configs"
 
 const StyledSection = styled.section`
     display: flex;
@@ -26,14 +24,8 @@ const Content = styled.div`
 const Section = props => {
     const { title, id, className } = props
 
-    const reveal = useRef(null)
-    useEffect(
-        () => scrollReveal.reveal(reveal.current, config.srollReveal()),
-        []
-    )
-
     return (
-        <StyledSection id={id} className={className} ref={reveal}>
+        <StyledSection id={id} className={className}>
             {title && <SectionTitle>{title}</SectionTitle>}
             <Content>{props.children}</Content>
         </StyledSection>

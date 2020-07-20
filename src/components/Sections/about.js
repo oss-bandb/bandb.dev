@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { Section, Profile } from "@components"
 import { theme } from "@styles"
+import scrollReveal from "@utils/scrollreveal"
+import { config } from "@configs"
 
 const StyledSection = styled(Section)`
     background-color: ${theme.secondaryColor};
@@ -25,15 +27,31 @@ const StyledDescription = styled.div`
 const About = ({ data, profiles }) => {
     const { frontmatter, html } = data[0].node
     const { title } = frontmatter
+
+    const reveal = useRef([])
+    useEffect(() =>
+        reveal.current.forEach((ref, i) =>
+            scrollReveal.reveal(
+                ref,
+                config.scrollReveal(i * config.scrollRevealDelay)
+            )
+        )
+    )
+
     return (
         <StyledSection title={title} id="about">
             <StyledProfiles>
                 {profiles.map((profile, i) => (
                     // Index as key is generally a bad idea, but shouldn't matter in this case
-                    <Profile key={i} profile={profile} />
+                    <Profile
+                        ref={el => reveal.current.push(el)}
+                        key={i}
+                        profile={profile}
+                    />
                 ))}
             </StyledProfiles>
             <StyledDescription
+                ref={el => reveal.current.push(el)}
                 dangerouslySetInnerHTML={{ __html: html }}
             ></StyledDescription>
         </StyledSection>

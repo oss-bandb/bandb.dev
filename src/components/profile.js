@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import PropTypes from "prop-types"
@@ -65,10 +65,10 @@ const SocialLink = styled.a`
     }
 `
 
-const Profile = ({ profile }) => {
+const Profile = forwardRef(({ profile }, ref) => {
     const { name, degree, image, resume, social } = profile.node.frontmatter
     return (
-        <StyledContainer>
+        <StyledContainer ref={ref}>
             <StyledImage
                 fluid={image.childImageSharp.fluid}
                 alt={name + " Freelance Android developer"}
@@ -90,7 +90,7 @@ const Profile = ({ profile }) => {
             </SocialLinks>
         </StyledContainer>
     )
-}
+})
 
 Profile.propTypes = {
     profile: PropTypes.object.isRequired,

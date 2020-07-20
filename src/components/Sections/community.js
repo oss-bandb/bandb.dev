@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Section } from "@components"
 import { theme } from "@styles"
 import { FormattedIcon } from "@components/icons"
+import scrollReveal from "@utils/scrollreveal"
+import { config } from "@configs"
 
 const StyledSection = styled(Section)`
     display: flex;
@@ -63,6 +65,7 @@ const Community = ({ data }) => {
         forks: null,
     })
 
+    // TODO: move url to md file
     useEffect(() => {
         fetch("https://api.github.com/repos/Team-Blox/GraphView")
             .then(response => response.json())
@@ -76,13 +79,19 @@ const Community = ({ data }) => {
             .catch(e => console.error(e))
     }, [])
 
+    const reveal = useRef(null)
+    useEffect(
+        () => scrollReveal.reveal(reveal.current, config.scrollReveal()),
+        []
+    )
+
     return (
         <StyledSection title={title} id="community">
             <StyledGrid>
-                <StyledContainer>
+                <StyledContainer ref={el => (reveal.current = el)}>
                     <StyledImage
                         fluid={image.childImageSharp.fluid}
-                        alt={name + " Freelance Android developer"}
+                        alt={"GraphView Logo"} // TODO move alt to md
                     />
                     <StyledDescription
                         dangerouslySetInnerHTML={{ __html: html }}
