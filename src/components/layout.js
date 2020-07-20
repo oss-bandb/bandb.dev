@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Head, Navigation, Footer } from "@components"
 import { GlobalStyle } from "@styles"
 
@@ -8,6 +8,18 @@ if (typeof window !== "undefined") {
     require("smooth-scroll")('a[href*="#"]')
 }
 const Layout = props => {
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.substring(1)
+            setTimeout(() => {
+                const el = document.getElementById(id)
+                if (el) {
+                    el.scrollIntoView()
+                    el.focus()
+                }
+            }, 0)
+        }
+    }, [])
     return (
         <>
             <Head />
