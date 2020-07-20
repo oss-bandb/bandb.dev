@@ -9,10 +9,11 @@ const StyledSection = styled.section`
     flex-direction: column;
     width: 100%;
     padding: 1.5rem;
+    margin-top: 5rem;
 `
 
 const SectionTitle = styled.h1`
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     text-align: center;
     font-weight: 600;
     font-size: 2em;
@@ -24,7 +25,7 @@ const Content = styled.div`
 
 const Section = props => {
     const { title, id, className } = props
-    
+
     const reveal = useRef(null)
     useEffect(
         () => scrollReveal.reveal(reveal.current, config.srollReveal()),
