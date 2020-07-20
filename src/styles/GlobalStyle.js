@@ -16,6 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   padding: 0;
+  font-size: 1.1em;
   color: ${theme.color};
 }
 
@@ -23,7 +24,7 @@ a {
   display: inline-block;
   text-decoration: none;
   text-decoration-skip-ink: auto;
-  color: ${theme.colorAccent};
+  color: ${theme.primaryColor};
   position: relative;
   cursor: pointer;
   &:hover,

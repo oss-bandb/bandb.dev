@@ -4,7 +4,7 @@ import { Section, Profile } from "@components"
 import { theme } from "@styles"
 
 const StyledSection = styled(Section)`
-    background-color: ${theme.colorAccent};
+    background-color: ${theme.secondaryColor};
     display: flex;
     justify-content: Center;
     align-items: center;

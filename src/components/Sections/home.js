@@ -16,7 +16,7 @@ const StyledSection = styled(Section)`
 const StyledButton = styled.a`
     padding: 10px;
     margin-top: 5em;
-    background-color: ${theme.colorAccent};
+    background-color: ${theme.primaryColor};
     border: none;
     border-radius: 5px;
     font-size: 1.2em;

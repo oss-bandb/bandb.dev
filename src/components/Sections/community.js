@@ -26,7 +26,7 @@ const StyledContainer = styled.div`
     position: relative;
     padding: 2rem 1.75rem;
     height: 100%;
-    background-color: ${theme.lightGrey};
+    background-color: ${theme.secondaryColor};
 `
 const StyledDescription = styled.div`
     text-align: center;

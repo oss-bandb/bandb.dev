@@ -15,7 +15,7 @@ const StyledButton = styled.a`
     padding: 10px;
     margin-top: 2em;
     margin-bottom: 3em;
-    background-color: ${theme.colorAccent};
+    background-color: ${theme.primaryColor};
     border: none;
     border-radius: 5px;
     font-size: 1.2em;

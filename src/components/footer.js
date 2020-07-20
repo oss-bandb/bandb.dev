@@ -6,7 +6,7 @@ import { theme, device } from "@styles"
 const FooterContainer = styled.footer`
     display: flex;
     flex-direction: column;
-    background-color: ${theme.lightGrey};
+    background-color: ${theme.secondaryColor};
 `
 
 const InfoContainer = styled.div`
@@ -33,7 +33,7 @@ const CopyrightContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: ${theme.colorAccent};
+    background-color: ${theme.primaryColor};
     padding: 0.8em;
 `
 

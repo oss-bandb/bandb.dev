@@ -38,7 +38,7 @@ const Sidebar = styled.aside`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: ${theme.lightGrey};
+    background-color: ${theme.secondaryColor};
     padding: 50px;
     width: 40vw;
     height: 100%;
