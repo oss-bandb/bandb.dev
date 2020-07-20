@@ -66,13 +66,17 @@ const SocialLink = styled.a`
 `
 
 const Profile = forwardRef(({ profile }, ref) => {
-    const { name, degree, image, resume, social } = profile.node.frontmatter
+    const {
+        name,
+        degree,
+        image,
+        resume,
+        social,
+        alt,
+    } = profile.node.frontmatter
     return (
         <StyledContainer ref={ref}>
-            <StyledImage
-                fluid={image.childImageSharp.fluid}
-                alt={name + " Freelance Android developer"}
-            />
+            <StyledImage fluid={image.childImageSharp.fluid} alt={alt} />
             <StyledName>
                 {name} <Degree>{degree}</Degree>
             </StyledName>

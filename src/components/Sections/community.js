@@ -6,6 +6,7 @@ import { Section } from "@components"
 import { theme } from "@styles"
 import { FormattedIcon } from "@components/icons"
 import scrollReveal from "@utils/scrollreveal"
+import { splitGithubInfo } from "@utils"
 import { config } from "@configs"
 
 const StyledSection = styled(Section)`
@@ -59,15 +60,15 @@ const StyledGitHubInfo = styled.div`
 
 const Community = ({ data }) => {
     const { frontmatter, html } = data[0].node
-    const { title, image } = frontmatter
+    const { title, image, alt, link } = frontmatter
     const [githubInfo, setGitHubInfo] = useState({
         stars: null,
         forks: null,
     })
 
-    // TODO: move url to md file
+    const teamLink = splitGithubInfo(link)
     useEffect(() => {
-        fetch("https://api.github.com/repos/Team-Blox/GraphView")
+        fetch("https://api.github.com/repos/" + teamLink)
             .then(response => response.json())
             .then(json => {
                 const { stargazers_count, forks_count } = json
@@ -91,14 +92,14 @@ const Community = ({ data }) => {
                 <StyledContainer ref={el => (reveal.current = el)}>
                     <StyledImage
                         fluid={image.childImageSharp.fluid}
-                        alt={"GraphView Logo"} // TODO move alt to md
+                        alt={alt}
                     />
                     <StyledDescription
                         dangerouslySetInnerHTML={{ __html: html }}
                     ></StyledDescription>
 
                     <StyledGitHubLink
-                        href="https://github.com/Team-Blox/GraphView"
+                        href={link}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                     >

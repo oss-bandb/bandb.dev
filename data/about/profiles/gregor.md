@@ -2,6 +2,7 @@
 name: "Gregor Block"
 degree: "M. Sc."
 image: ./gregor_image.jpeg
+alt: "Gregor Block Android freelance developer"
 resume: ./Lebenslauf_GregorBlock.pdf
 social:
     - link: "https://github.com/GregorBlock"
