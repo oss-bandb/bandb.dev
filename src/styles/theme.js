@@ -9,9 +9,21 @@ const theme = {
     // backgroundColor: "#0B3231",
     // secondaryColor: "#0F4341",
 
-    primaryColor: "#5C6B84",
-    backgroundColor: "#222831",
-    secondaryColor: "#2A313C",
+    // primaryColor: "#0B9FAD",
+    // backgroundColor: "#043539",
+    // secondaryColor: "#05464C",
+
+    // primaryColor: "#5C6B84",
+    // backgroundColor: "#222831",
+    // secondaryColor: "#2A313C",
+
+    // primaryColor: "#815F81",
+    // backgroundColor: "#231A23",
+    // secondaryColor: "#2F232F",
+
+    primaryColor: "#1B81C5",
+    backgroundColor: "#0C3B5A",
+    secondaryColor: "#0F476C",
 
     navHeight: "50px",
 
