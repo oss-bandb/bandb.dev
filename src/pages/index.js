@@ -65,6 +65,7 @@ export const query = graphql`
                                 }
                             }
                         }
+                        alt
                         resume {
                             publicURL
                         }
@@ -107,6 +108,7 @@ export const query = graphql`
                                 }
                             }
                         }
+                        alt
                     }
                     html
                 }

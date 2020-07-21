@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import PropTypes from "prop-types"
@@ -10,7 +10,8 @@ const StyledContainer = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 275px;
+    width: 300px;
+    padding: 15px;
 
     @media screen and (${device.smallDown}) {
         &:not(:last-child) {
@@ -31,6 +32,7 @@ const Degree = styled.span`
 const StyledImage = styled(Img)`
     border-radius: 50%;
     width: 100%;
+    margin-bottom: 30px;
 `
 
 const StyledResumeButton = styled.a`
@@ -63,14 +65,18 @@ const SocialLink = styled.a`
     }
 `
 
-const Profile = ({ profile }) => {
-    const { name, degree, image, resume, social } = profile.node.frontmatter
+const Profile = forwardRef(({ profile }, ref) => {
+    const {
+        name,
+        degree,
+        image,
+        resume,
+        social,
+        alt,
+    } = profile.node.frontmatter
     return (
-        <StyledContainer>
-            <StyledImage
-                fluid={image.childImageSharp.fluid}
-                alt={name + " Freelance Android developer"}
-            />
+        <StyledContainer ref={ref}>
+            <StyledImage fluid={image.childImageSharp.fluid} alt={alt} />
             <StyledName>
                 {name} <Degree>{degree}</Degree>
             </StyledName>
@@ -88,7 +94,7 @@ const Profile = ({ profile }) => {
             </SocialLinks>
         </StyledContainer>
     )
-}
+})
 
 Profile.propTypes = {
     profile: PropTypes.object.isRequired,

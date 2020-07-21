@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import ogImage from "@images/og.png"
 import { config } from "@configs"
+import favicon from "@images/favicon.ico"
 
 const Head = () => {
     return (
@@ -10,7 +11,7 @@ const Head = () => {
             <title itemProp="name" lang="en">
                 {config.metadata.siteTitle}
             </title>
-            {/* <link rel="shortcut icon" href={favicon} /> */}
+            <link rel="shortcut icon" href={favicon} />
             <link rel="canonical" href="https://bandb.dev/" />
             <meta
                 name="google-site-verification"

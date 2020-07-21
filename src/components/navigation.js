@@ -12,9 +12,13 @@ const StyledContainer = styled.header`
     height: ${theme.navHeight};
     top: 0;
     margin: 0;
-    padding: 15px 100px;
+    padding: 30px 100px;
     background-color: ${theme.backgroundColor};
     z-index: 11;
+
+    @media ${device.largeDown} {
+        padding: 30px 30px;
+    }
 `
 
 const Nav = styled.nav`
@@ -41,8 +45,9 @@ const NavList = styled.ol`
     justify-content: space-between;
     list-style: none;
 
-    @media screen and (${device.largeDown}) {
+    @media ${device.largeDown} {
         display: none;
+        background-color: red;
     }
 `
 
@@ -64,7 +69,7 @@ const HamburgerContainer = styled.div`
     width: ${theme.hamburgerMenu.width};
     height: ${theme.hamburgerMenu.height};
 
-    @media screen and (${device.largeDown}) {
+    @media ${device.largeDown} {
         display: flex;
     }
 `
@@ -116,11 +121,10 @@ const Navigation = () => {
             }
         }
     `)
-    const [open, setOpen] = useState(false)
     const navItems = data.dataYaml.items
+    const [open, setOpen] = useState(false)
 
     const toggleMenu = () => {
-        console.log("toggle")
         setOpen(!open)
     }
 
@@ -149,7 +153,7 @@ const Navigation = () => {
                     ))}
                 </NavList>
             </Nav>
-            <Menu navItems={navItems} open={open} />
+            <Menu navItems={navItems} menuOpen={open} toggleMenu={toggleMenu}/>
         </StyledContainer>
     )
 }

@@ -1,10 +1,12 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { Section, Profile } from "@components"
-import { Container, theme } from "@styles"
+import { theme } from "@styles"
+import scrollReveal from "@utils/scrollreveal"
+import { config } from "@configs"
 
 const StyledSection = styled(Section)`
-    background-color: ${theme.colorAccent};
+    background-color: ${theme.secondaryColor};
     display: flex;
     justify-content: Center;
     align-items: center;
@@ -43,37 +45,44 @@ const Skill = styled.li`
 
 const StyledContent = styled.div`
     padding-bottom: 45px;
-    margin: 1.5em;
-`
-
-const StyledContainer = styled(Container)`
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
 `
 
 const About = ({ data, profiles }) => {
     const { frontmatter, html } = data[0].node
     const { title, skills } = frontmatter
+
+    const reveal = useRef([])
+    useEffect(() =>
+        reveal.current.forEach((ref, i) =>
+            scrollReveal.reveal(
+                ref,
+                config.scrollReveal(i * config.scrollRevealDelay)
+            )
+        )
+    )
+
     return (
         <StyledSection title={title} id="about">
-            <StyledContainer>
-                <StyledProfiles>
-                    {profiles.map((profile, i) => (
-                        // Index as key is generally a bad idea, but shouldn't matter in this case
-                        <Profile key={i} profile={profile} />
-                    ))}
-                </StyledProfiles>
-                <StyledContent>
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
-                    <SkillsContainer>
-                        {skills &&
-                            skills.map((skill, i) => (
-                                <Skill key={i}>{skill}</Skill>
-                            ))}
-                    </SkillsContainer>
-                </StyledContent>
-            </StyledContainer>
+            <StyledProfiles>
+                {profiles.map((profile, i) => (
+                    // Index as key is generally a bad idea, but shouldn't matter in this case
+                    <Profile
+                        ref={el => reveal.current.push(el)}
+                        key={i}
+                        profile={profile}
+                    />
+                ))}
+            </StyledProfiles>
+
+            <StyledContent ref={el => reveal.current.push(el)}>
+                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <SkillsContainer>
+                    {skills &&
+                        skills.map((skill, i) => (
+                            <Skill key={i}>{skill}</Skill>
+                        ))}
+                </SkillsContainer>
+            </StyledContent>
         </StyledSection>
     )
 }

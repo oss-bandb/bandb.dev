@@ -36,6 +36,7 @@ module.exports = {
                     "@configs": path.resolve(__dirname, "src/configs"),
                     "@images": path.resolve(__dirname, "src/images"),
                     "@styles": path.resolve(__dirname, "src/styles"),
+                    "@utils": path.resolve(__dirname, "src/utils"),
                 },
                 extensions: [],
             },

@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import { Section } from "@components"
 import { theme } from "@styles"
+import scrollReveal from "@utils/scrollreveal"
+import { config } from "@configs"
 
 const StyledSection = styled(Section)`
     min-height: 550px;
@@ -11,12 +12,13 @@ const StyledSection = styled(Section)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 `
 
-const StyledButton = styled(Link)`
+const StyledButton = styled.a`
     padding: 10px;
     margin-top: 5em;
-    background-color: ${theme.colorAccent};
+    background-color: ${theme.primaryColor};
     border: none;
     border-radius: 5px;
     font-size: 1.2em;
@@ -35,11 +37,29 @@ const Subtitle = styled.p`
 
 const Home = ({ data }) => {
     const { title, subtitle, action } = data[0].node.frontmatter
+
+    const reveal = useRef([])
+    useEffect(
+        () =>
+            reveal.current.forEach((ref, i) =>
+                scrollReveal.reveal(
+                    ref,
+                    config.scrollReveal(i * config.scrollRevealDelay)
+                )
+            ),
+        []
+    )
+
     return (
         <StyledSection id="home">
-            <Title>{title}</Title>
-            <Subtitle>{subtitle}</Subtitle>
-            <StyledButton to="/#contact">{action}</StyledButton>
+            <Title ref={el => reveal.current.push(el)}>{title}</Title>
+            <Subtitle ref={el => reveal.current.push(el)}>{subtitle}</Subtitle>
+            <StyledButton
+                href={`mailto:contact@bandb.dev`}
+                ref={el => reveal.current.push(el)}
+            >
+                {action}
+            </StyledButton>
         </StyledSection>
     )
 }

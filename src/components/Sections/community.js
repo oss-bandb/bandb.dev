@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Section } from "@components"
-import { Container, theme } from "@styles"
+import { theme } from "@styles"
 import { FormattedIcon } from "@components/icons"
+import scrollReveal from "@utils/scrollreveal"
+import { splitGithubInfo } from "@utils"
+import { config } from "@configs"
 
 const StyledSection = styled(Section)`
     display: flex;
@@ -13,7 +16,6 @@ const StyledSection = styled(Section)`
     width: 100%;
 `
 const StyledGrid = styled.div`
-    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     grid-gap: 15px;
@@ -27,22 +29,13 @@ const StyledContainer = styled.div`
     position: relative;
     padding: 2rem 1.75rem;
     height: 100%;
-    background-color: #232326;
+    background-color: ${theme.secondaryColor};
 `
 const StyledDescription = styled.div`
     text-align: center;
 `
 const StyledImage = styled(Img)`
     width: 100%;
-`
-const SocialLink = styled.a`
-    margin: 0.6em;
-
-    svg {
-        height: 32px;
-        width: 32px;
-        fill: ${theme.color};
-    }
 `
 const StyledGitHubLink = styled.a`
     text-decoration: none;
@@ -67,14 +60,15 @@ const StyledGitHubInfo = styled.div`
 
 const Community = ({ data }) => {
     const { frontmatter, html } = data[0].node
-    const { title, link, icon, image } = frontmatter
+    const { title, image, alt, link } = frontmatter
     const [githubInfo, setGitHubInfo] = useState({
         stars: null,
         forks: null,
     })
 
+    const teamLink = splitGithubInfo(link)
     useEffect(() => {
-        fetch("https://api.github.com/repos/Team-Blox/GraphView")
+        fetch("https://api.github.com/repos/" + teamLink)
             .then(response => response.json())
             .then(json => {
                 const { stargazers_count, forks_count } = json
@@ -86,20 +80,26 @@ const Community = ({ data }) => {
             .catch(e => console.error(e))
     }, [])
 
+    const reveal = useRef(null)
+    useEffect(
+        () => scrollReveal.reveal(reveal.current, config.scrollReveal()),
+        []
+    )
+
     return (
         <StyledSection title={title} id="community">
             <StyledGrid>
-                <StyledContainer>
+                <StyledContainer ref={el => (reveal.current = el)}>
                     <StyledImage
                         fluid={image.childImageSharp.fluid}
-                        alt={name + " Freelance Android developer"}
+                        alt={alt}
                     />
                     <StyledDescription
                         dangerouslySetInnerHTML={{ __html: html }}
                     ></StyledDescription>
 
                     <StyledGitHubLink
-                        href="https://github.com/Team-Blox/GraphView"
+                        href={link}
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                     >
