@@ -2,6 +2,17 @@ const path = require("path")
 
 module.exports = {
     plugins: [
+        {
+            resolve: `gatsby-plugin-gtag`,
+            options: {
+                // your google analytics tracking id
+                trackingId: "UA-145084202-1",
+                // Puts tracking script in the head instead of the body
+                head: false,
+                // enable ip anonymization
+                anonymize: true,
+            },
+        },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-sharp`,
@@ -23,6 +34,7 @@ module.exports = {
                     // When adding new alias, don't forget to add it in jsconfig.json for autocomplete
                     "@components": path.resolve(__dirname, "src/components"),
                     "@configs": path.resolve(__dirname, "src/configs"),
+                    "@images": path.resolve(__dirname, "src/images"),
                     "@styles": path.resolve(__dirname, "src/styles"),
                 },
                 extensions: [],

@@ -1,6 +1,7 @@
 import React from "react"
 import { Head, Navigation, Footer } from "@components"
 import { GlobalStyle } from "@styles"
+import CookieConsent from "react-cookie-consent"
 
 // https://medium.com/@chrisfitkin/how-to-smooth-scroll-links-in-gatsby-3dc445299558
 if (typeof window !== "undefined") {
@@ -16,6 +17,14 @@ const Layout = props => {
             <Navigation />
             {props.children}
             <Footer />
+            <CookieConsent
+                location="bottom"
+                buttonText="Accept"
+                declineButtonText="Decline"
+                cookieName="gatsby-plugin-google-analytics-gdpr_cookies-enabled"
+            >
+                This website uses cookies to enhance the user experience.
+            </CookieConsent>
         </div>
     )
 }

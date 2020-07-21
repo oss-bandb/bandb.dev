@@ -103,8 +103,6 @@ const Community = ({ data }) => {
                         target="_blank"
                         rel="nofollow noopener noreferrer"
                     >
-                        {/* <div>Designed &amp; Built by Brittany Chiang</div> */}
-
                         {githubInfo.stars && githubInfo.forks && (
                             <StyledGitHubInfo>
                                 <span>

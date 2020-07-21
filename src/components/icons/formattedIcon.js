@@ -6,6 +6,7 @@ import {
     GithubIcon,
     LinkedinIcon,
     XingIcon,
+    MailIcon,
 } from "@components/icons"
 
 const FormattedIcon = ({ name }) => {
@@ -20,6 +21,8 @@ const FormattedIcon = ({ name }) => {
             return <ForkIcon />
         case "star":
             return <StarIcon />
+        case "mail":
+            return <MailIcon />
     }
 }
 

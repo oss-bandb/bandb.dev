@@ -44,6 +44,7 @@ export const query = graphql`
                 node {
                     frontmatter {
                         title
+                        skills
                     }
                     html
                 }
