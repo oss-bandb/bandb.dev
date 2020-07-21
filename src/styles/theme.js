@@ -25,6 +25,15 @@ const theme = {
     backgroundColor: "#0C3B5A",
     secondaryColor: "#0F476C",
 
+    // primaryColor: "#555555",
+    // backgroundColor: "#000000",
+    // secondaryColor: "#111111",
+
+    // color: "#000000",
+    // primaryColor: "#1B81C5",
+    // backgroundColor: "#ffffff",
+    // secondaryColor: "#eeeeee",
+
     navHeight: "50px",
 
     hamburgerMenu: {
