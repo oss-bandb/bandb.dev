@@ -89,7 +89,7 @@ const Footer = () => {
                             <StyledLink to="#services">Services</StyledLink>
                         </LinkItem>
                         <LinkItem>
-                            <StyledLink to="/legal">Imprint</StyledLink>
+                            <StyledLink to="/imprint">Imprint</StyledLink>
                         </LinkItem>
                     </LinkList>
                 </ColumnContainer>

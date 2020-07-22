@@ -10,7 +10,7 @@ const StyledSection = styled(Section)`
     align-items: center;
 `
 
-const LegalPage = () => {
+const ImprintPage = () => {
     return (
         <Layout>
             <Section>
@@ -343,4 +343,4 @@ const LegalPage = () => {
     )
 }
 
-export default LegalPage
+export default ImprintPage
