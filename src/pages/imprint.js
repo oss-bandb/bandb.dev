@@ -133,7 +133,8 @@ const ImprintPage = () => {
                     Verantwortlicher im Sinne der Datenschutzgesetze,
                     insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
                 </p>
-                <p>Wladimir Putin</p>
+                <p>Dennis Block</p>
+                <p>Gregor Block</p>
                 <h2>Ihre Betroffenenrechte</h2>
                 <p>
                     Unter den angegebenen Kontaktdaten unseres
