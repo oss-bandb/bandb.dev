@@ -9,7 +9,9 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "node ./deploy/deploy",
+    "buildDeploy": "npm run build && npm run deploy"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.1",
@@ -42,8 +44,10 @@
     "@upstatement/prettier-config": "^0.3.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "dotenv": "^8.2.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-react": "^7.20.3",
+    "ftp-deploy": "^2.3.7",
     "prettier": "^1.19.1"
   }
 }
