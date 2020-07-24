@@ -57,7 +57,7 @@ const StyledLink = styled(Link)`
     color: ${theme.color};
 `
 
-const Title = styled.h4`
+const Title = styled.h3`
     font-size: 1.2em;
     padding-bottom: 8px;
 `

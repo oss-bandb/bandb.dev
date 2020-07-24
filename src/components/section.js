@@ -10,7 +10,7 @@ const StyledSection = styled.section`
     margin-top: 5rem;
 `
 
-const SectionTitle = styled.h1`
+const SectionTitle = styled.h2`
     margin-bottom: 3rem;
     text-align: center;
     font-weight: 600;
