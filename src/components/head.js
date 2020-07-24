@@ -12,11 +12,12 @@ const Head = () => {
                 {config.metadata.siteTitle}
             </title>
             <link rel="shortcut icon" href={favicon} />
-            <link rel="canonical" href="https://www.bandb.dev/" />
+            <link rel="canonical" href={config.metadata.siteUrl} />
             <meta
                 name="description"
                 content={config.metadata.siteDescription}
             />
+            <meta name="keywords" content={config.metadata.keywords} />
             <meta
                 name="google-site-verification"
                 content={config.metadata.googleVerification}
