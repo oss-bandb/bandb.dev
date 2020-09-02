@@ -1,6 +1,7 @@
 // Color pallete from: https://colorhunt.co/palette/196113
 const theme = {
     color: "#e4e3e3",
+    color50: "#e4e3e380",
     // primaryColor: "#335D99",
     // backgroundColor: "#0a192f",
     // secondaryColor: "#172a45",

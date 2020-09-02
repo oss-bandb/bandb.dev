@@ -15,11 +15,6 @@ const StyledSection = styled(Section)`
     align-items: center;
     width: 100%;
 `
-const StyledGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: 15px;
-`
 const StyledContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -30,6 +25,8 @@ const StyledContainer = styled.div`
     padding: 2rem 1.75rem;
     height: 100%;
     background-color: ${theme.secondaryColor};
+    max-width: 800px;
+    min-width: 400px;
 `
 const StyledDescription = styled.div`
     text-align: center;
@@ -88,44 +85,34 @@ const Community = ({ data }) => {
 
     return (
         <StyledSection title={title} id="community">
-            <StyledGrid>
-                <StyledContainer ref={el => (reveal.current = el)}>
-                    <StyledImage
-                        fluid={image.childImageSharp.fluid}
-                        alt={alt}
-                    />
-                    <StyledDescription
-                        dangerouslySetInnerHTML={{ __html: html }}
-                    ></StyledDescription>
-
-                    <StyledGitHubLink
-                        href={link}
-                        target="_blank"
-                        rel="nofollow noopener noreferrer"
-                    >
-                        {githubInfo.stars && githubInfo.forks && (
-                            <StyledGitHubInfo>
-                                <span>
-                                    <FormattedIcon name="github" />
-                                    <span>GitHub</span>
-                                </span>
-                                <span>
-                                    <FormattedIcon name="star" />
-                                    <span>
-                                        {githubInfo.stars.toLocaleString()}
-                                    </span>
-                                </span>
-                                <span>
-                                    <FormattedIcon name="fork" />
-                                    <span>
-                                        {githubInfo.forks.toLocaleString()}
-                                    </span>
-                                </span>
-                            </StyledGitHubInfo>
-                        )}
-                    </StyledGitHubLink>
-                </StyledContainer>
-            </StyledGrid>
+            <StyledContainer>
+                <StyledImage fluid={image.childImageSharp.fluid} alt={alt} />
+                <StyledDescription
+                    dangerouslySetInnerHTML={{ __html: html }}
+                ></StyledDescription>
+                <StyledGitHubLink
+                    href={link}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                >
+                    {githubInfo.stars && githubInfo.forks && (
+                        <StyledGitHubInfo>
+                            <span>
+                                <FormattedIcon name="github" />
+                                <span>GitHub</span>
+                            </span>
+                            <span>
+                                <FormattedIcon name="star" />
+                                <span>{githubInfo.stars.toLocaleString()}</span>
+                            </span>
+                            <span>
+                                <FormattedIcon name="fork" />
+                                <span>{githubInfo.forks.toLocaleString()}</span>
+                            </span>
+                        </StyledGitHubInfo>
+                    )}
+                </StyledGitHubLink>
+            </StyledContainer>
         </StyledSection>
     )
 }

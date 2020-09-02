@@ -2,8 +2,8 @@
 name: "Dennis Block"
 degree: "M. Sc."
 image: ./dennis_image.jpg
-alt: "Dennis Block Android freelance developer"
-resume: ./Lebenslauf_DennisBlock.pdf
+alt: "Dennis Block - Android freelance developer"
+resume: ./CV_DennisBlock.en.pdf
 social:
     - link: "mailto:Dennis.Block@BandB.dev"
       icon: "mail" 

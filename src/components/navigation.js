@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { CSSTransition, TransitionGroup } from "react-transition-group"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 import { theme, device } from "@styles"
-import { Menu } from "@components"
+import { Menu, Language } from "@components"
 
 const StyledContainer = styled.header`
     display: flex;
@@ -44,6 +44,7 @@ const NavList = styled.ol`
     display: flex;
     justify-content: space-between;
     list-style: none;
+    white-space: nowrap;
 
     @media ${device.largeDown} {
         display: none;
@@ -110,18 +111,11 @@ const Hamburger = styled.div`
     }
 `
 
-const Navigation = () => {
-    const data = useStaticQuery(graphql`
-        {
-            dataYaml {
-                items {
-                    name
-                    to
-                }
-            }
-        }
-    `)
-    const navItems = data.dataYaml.items
+const Container = styled.div`
+    display: flex;
+`
+
+const Navigation = ({ navItems }) => {
     const [open, setOpen] = useState(false)
 
     const toggleMenu = () => {
@@ -135,25 +129,30 @@ const Navigation = () => {
                     <NavLink to="/">Block &amp; Block</NavLink>
                 </Brand>
 
-                <TransitionGroup component={null}>
-                    <CSSTransition classNames="fade" timeout={0}>
-                        <HamburgerContainer onClick={toggleMenu}>
-                            <HamburgerBox>
-                                <Hamburger open={open} />
-                            </HamburgerBox>
-                        </HamburgerContainer>
-                    </CSSTransition>
-                </TransitionGroup>
+                <Container>
+                    <Language />
+                    <TransitionGroup component={null}>
+                        <CSSTransition classNames="fade" timeout={0}>
+                            <HamburgerContainer onClick={toggleMenu}>
+                                <HamburgerBox>
+                                    <Hamburger open={open} />
+                                </HamburgerBox>
+                            </HamburgerContainer>
+                        </CSSTransition>
+                    </TransitionGroup>
 
-                <NavList>
-                    {navItems.map(({ name, to }, i) => (
-                        <li key={name}>
-                            <NavLink to={to}>{name}</NavLink>
-                        </li>
-                    ))}
-                </NavList>
+                    <NavList>
+                        {navItems
+                            .filter(item => item.main)
+                            .map(({ name, to }, i) => (
+                                <li key={name}>
+                                    <NavLink to={to}>{name}</NavLink>
+                                </li>
+                            ))}
+                    </NavList>
+                </Container>
             </Nav>
-            <Menu navItems={navItems} menuOpen={open} toggleMenu={toggleMenu}/>
+            <Menu navItems={navItems} menuOpen={open} toggleMenu={toggleMenu} />
         </StyledContainer>
     )
 }

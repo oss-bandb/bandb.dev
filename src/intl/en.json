@@ -1,16 +1,22 @@
 {
-  "metadata": {
-    "title": "Block & Block - Your freelance developers for Android.",
-    "description": "A team of two Android freelance developers to bring your ideas to life."
-  },
-  "menu": [
-    {
-      "text": "home",
-      "to": "#home"
+    "metadata": {
+        "siteTitle": "Block & Block | Freelance Android developers",
+        "siteDescription": "Block & Block is a freelancer association in the Ruhr area, North Rhine-Westphalia, Germany, which specializes in the development (and occasionally conception) of Android Apps.",
+        "keywords": "Dennis Block, Gregor Block, Block und Block, Block, Android, freelance, software engineer, app developer"
+      
     },
-    {
-      "text": "about",
-      "to": "#about"
+    "branding": "Block & Block",
+    "title": "Your freelance developer team.",
+    "footer": {
+        "contact": {
+            "title": "Contact",
+            "name": "Block & Block Software Engineering GbR",
+            "street": "Werringser Straße 36b",
+            "city": "58706 Menden",
+            "land": "NRW, Germany"
+        },
+        "usefulLinks": {
+            "title": "Useful Links"
+        }
     }
-  ]
 }

@@ -1,7 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import { theme, device } from "@styles"
+import { config } from "@configs"
 
 const FooterContainer = styled.footer`
     display: flex;
@@ -66,52 +68,69 @@ const Brand = styled.h3`
     font-size: 1.4em;
 `
 
-const Footer = () => {
+const Footer = ({ links }) => {
+    const intl = useIntl()
     const startCopyrightYear = "2019"
     const currentCopyrightYear = new Date().getFullYear()
     return (
         <FooterContainer>
             <InfoContainer>
                 <ColumnContainer>
-                    <Title>Block & Block</Title>
-                    <div>Your freelance developer team.</div>
+                    <Title>
+                        <FormattedMessage id="branding" />
+                    </Title>
+                    <div>
+                        <FormattedMessage id="title" />
+                    </div>
                 </ColumnContainer>
                 <ColumnContainer>
-                    <Title>Useful Links</Title>
+                    <Title>
+                        <FormattedMessage id="footer.usefulLinks.title" />
+                    </Title>
                     <LinkList>
-                        <LinkItem>
-                            <StyledLink to="#home">Home</StyledLink>
-                        </LinkItem>
-                        <LinkItem>
-                            <StyledLink to="#about">About</StyledLink>
-                        </LinkItem>
-                        <LinkItem>
-                            <StyledLink to="#services">Services</StyledLink>
-                        </LinkItem>
-                        <LinkItem>
-                            <StyledLink to="/imprint">Imprint</StyledLink>
-                        </LinkItem>
+                        {config.footer.links.map(element => {
+                            const link = links.find(
+                                link => link.key === element
+                            )
+                            return (
+                                <LinkItem key={link.key}>
+                                    <StyledLink to={link.to}>
+                                        {link.name}
+                                    </StyledLink>
+                                </LinkItem>
+                            )
+                        })}
                     </LinkList>
                 </ColumnContainer>
                 <ColumnContainer>
-                    <Title>Contact</Title>
-                    <div>Block &amp; Block Software Engineering GbR</div>
+                    <Title>
+                        <FormattedMessage id="footer.contact.title" />
+                    </Title>
                     <div>
-                        Werringser Straße 36b <br />
-                        58706 Menden <br />
-                        NRW, Germany
+                        <FormattedMessage id="footer.contact.name" />
                     </div>
                     <div>
-                        <strong>contact@BandB.dev</strong>
+                        <FormattedMessage id="footer.contact.street" /> <br />
+                        <FormattedMessage id="footer.contact.city" /> <br />
+                        <FormattedMessage id="footer.contact.land" />
+                    </div>
+                    <div>
+                        <strong>{config.contactMail}</strong>
                     </div>
                 </ColumnContainer>
             </InfoContainer>
             <CopyrightContainer>
                 <div>
                     &copy; {startCopyrightYear} - {currentCopyrightYear}{" "}
-                    <strong>Block &amp; Block</strong>. All Rights Reserved.
+                    <strong>
+                        <FormattedMessage id="branding" />
+                    </strong>
+                    . All Rights Reserved.
                 </div>
-                <div> Designed by Block &amp; Block</div>
+                <div>
+                    {" "}
+                    Designed by <FormattedMessage id="branding" />
+                </div>
             </CopyrightContainer>
         </FooterContainer>
     )

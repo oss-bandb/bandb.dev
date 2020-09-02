@@ -8,7 +8,7 @@ if (typeof window !== "undefined") {
     // eslint-disable-next-line global-require
     require("smooth-scroll")('a[href*="#"]')
 }
-const Layout = props => {
+const Layout = ({ children, navItems }) => {
     useEffect(() => {
         if (location.hash) {
             const id = location.hash.substring(1)
@@ -25,9 +25,9 @@ const Layout = props => {
         <>
             <Head />
             <GlobalStyle />
-            <Navigation />
-            {props.children}
-            <Footer />
+            <Navigation navItems={navItems} />
+            {children}
+            <Footer links={navItems} />
             <CookieConsent
                 location="bottom"
                 buttonText="Accept"

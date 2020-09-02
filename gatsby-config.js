@@ -1,5 +1,7 @@
 const path = require("path")
 
+import { config } from "./src/configs"
+
 module.exports = {
     plugins: [
         {
@@ -22,9 +24,9 @@ module.exports = {
             resolve: `gatsby-plugin-intl`,
             options: {
                 path: `${__dirname}/src/intl`,
-                languages: [`en`, `de`],
-                defaultLanguage: `en`,
-                redirect: false,
+                languages: config.languages.supportedLanguages,
+                defaultLanguage: config.languages.defaultLanguage,
+                redirect: true,
             },
         },
         {

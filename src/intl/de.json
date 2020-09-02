@@ -1,28 +1,21 @@
 {
-  "metadata": {
-    "title": "Block & Block - Ihre Freiberufler für die Entwicklung von Android Apps.",
-    "description": "Ein Team von zwei Android Freiberuflern, die Ihre Ideen ins Leben bringen."
-  },
-  "navigation": [
-    {
-      "name": "home",
-      "text": "Start"
+    "metadata": {
+        "siteTitle": "Block & Block | Freelance Android Entwickler",
+        "siteDescription": "Block & Block ist eine Freelancer Zusammenschluss im Ruhrgebiet, welche sich auf die Entwicklung (und gelegentliche Konzeption) von Android Apps spezialisiert hat.",
+        "keywords": "Dennis Block, Gregor Block, Block und Block, Block, Android, Freelancer, Freiberufler, software engineer, App Entwickler"
     },
-    {
-      "name": "about",
-      "text": "über uns"
-    },
-    {
-      "name": "services",
-      "text": "leistungen"
-    },
-    {
-      "name": "community",
-      "text": "community"
-    },
-    {
-      "name": "contact",
-      "text": "kontakt"
+    "branding": "Block & Block",
+    "title": "Ihre freiberuflichen Android-Entwickler.",
+    "footer": {
+        "contact": {
+            "title": "Kontakt",
+            "name": "Block & Block Software Engineering GbR",
+            "street": "Werringser Straße 36b",
+            "city": "58706 Menden",
+            "land": "NRW, Germany"
+        },
+        "usefulLinks": {
+            "title": "Nützliche Links"
+        }
     }
-  ]
 }

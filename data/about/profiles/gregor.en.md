@@ -2,16 +2,15 @@
 name: "Gregor Block"
 degree: "M. Sc."
 image: ./gregor_image.jpeg
-alt: "Gregor Block Android freelance developer"
-resume: ./Lebenslauf_GregorBlock.pdf
+alt: "Gregor Block - Android freelance developer"
+resume: ./CV_GregorBlock.en.pdf
 social:
     - link: "mailto:Gregor.Block@BandB.dev"
-      icon: "mail" 
+      icon: "mail"
     - link: "https://github.com/GregorBlock"
       icon: "github"
     - link: "https://www.xing.com/profile/Gregor_Block"
       icon: "xing"
     - link: "https://www.linkedin.com/in/gregor-block-481760176/"
       icon: "linkedin"
-
 ---

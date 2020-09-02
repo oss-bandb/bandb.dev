@@ -1,0 +1,25 @@
+items:
+    - key: home
+      name: Home
+      to: /#home
+      main: true
+    - key: about
+      name: Über uns
+      to: /#about
+      main: true
+    - key: services
+      name: Leistungen
+      to: /#services
+      main: true
+    - key: community
+      name: community
+      to: /#community
+      main: true
+    - key: contact
+      name: Kontakt
+      to: /#contact
+      main: true
+    - key: imprint
+      name: Impressum
+      to: /imprint
+      main: false

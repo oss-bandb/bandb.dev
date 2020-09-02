@@ -1,0 +1,25 @@
+items:
+    - key: home
+      name: home
+      to: /#home
+      main: true
+    - key: about
+      name: about
+      to: /#about
+      main: true
+    - key: services
+      name: services
+      to: /#services
+      main: true
+    - key: community
+      name: community
+      to: /#community
+      main: true
+    - key: contact
+      name: contact
+      to: /#contact
+      main: true
+    - key: imprint
+      name: Imprint
+      to: /imprint
+      main: false

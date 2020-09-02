@@ -4,11 +4,11 @@
   "description": "bandb.dev Website",
   "version": "0.1.0",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "NODE_OPTIONS='-r esm' gatsby build",
+    "develop": "NODE_OPTIONS='-r esm' gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "NODE_OPTIONS='-r esm' gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "node ./deploy/deploy",
     "buildDeploy": "npm run build && npm run deploy"
@@ -29,6 +29,7 @@
     "gatsby-transformer-remark": "^2.8.22",
     "gatsby-transformer-sharp": "^2.5.10",
     "gatsby-transformer-yaml": "^2.4.10",
+    "gray-matter": "^4.0.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-cookie-consent": "^5.1.2",
@@ -47,6 +48,7 @@
     "dotenv": "^8.2.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-react": "^7.20.3",
+    "esm": "^3.2.25",
     "ftp-deploy": "^2.3.7",
     "prettier": "^1.19.1"
   }

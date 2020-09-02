@@ -1,16 +1,27 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import { injectIntl } from "gatsby-plugin-intl"
 import { Layout, Home, About, Services, Community, Contact } from "@components"
 
-const IndexPage = ({ location, data }) => {
+const IndexPage = ({ data }) => {
+    const {
+        home,
+        about,
+        profiles,
+        services,
+        community,
+        contact,
+        navigation,
+    } = data
+
     return (
-        <Layout>
-            <Home data={data.home.edges} />
-            <About data={data.about.edges} profiles={data.profiles.edges} />
-            <Services data={data.services.edges} />
-            <Community data={data.community.edges} />
-            <Contact data={data.contact.edges} />
+        <Layout navItems={navigation.items}>
+            <Home data={home.edges} />
+            <About data={about.edges} profiles={profiles.edges} />
+            <Services data={services.edges} />
+            <Community data={community.edges} />
+            <Contact data={contact.edges} />
         </Layout>
     )
 }
@@ -20,12 +31,23 @@ IndexPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export default IndexPage
+export default injectIntl(IndexPage)
 
 export const query = graphql`
-    {
+    query SiteData($language: String) {
+        navigation: dataYaml(fields: { language: { eq: $language } }) {
+            items {
+                key
+                name
+                to
+                main
+            }
+        }
         home: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/home/" } }
+            filter: {
+                fileAbsolutePath: { regex: "/home/" }
+                fields: { language: { eq: $language } }
+            }
         ) {
             edges {
                 node {
@@ -38,7 +60,10 @@ export const query = graphql`
             }
         }
         about: allMarkdownRemark(
-            filter: { fileAbsolutePath: { glob: "**/about/*.md" } }
+            filter: {
+                fileAbsolutePath: { glob: "**/about/*.md" }
+                fields: { language: { eq: $language } }
+            }
         ) {
             edges {
                 node {
@@ -51,7 +76,10 @@ export const query = graphql`
             }
         }
         profiles: allMarkdownRemark(
-            filter: { fileAbsolutePath: { glob: "**/about/profiles/*md" } }
+            filter: {
+                fileAbsolutePath: { glob: "**/about/profiles/*md" }
+                fields: { language: { eq: $language } }
+            }
         ) {
             edges {
                 node {
@@ -78,7 +106,10 @@ export const query = graphql`
             }
         }
         services: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/services/" } }
+            filter: {
+                fileAbsolutePath: { regex: "/services/" }
+                fields: { language: { eq: $language } }
+            }
         ) {
             edges {
                 node {
@@ -93,7 +124,10 @@ export const query = graphql`
             }
         }
         community: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/community/" } }
+            filter: {
+                fileAbsolutePath: { regex: "/community/" }
+                fields: { language: { eq: $language } }
+            }
         ) {
             edges {
                 node {
@@ -115,7 +149,10 @@ export const query = graphql`
             }
         }
         contact: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/contact/" } }
+            filter: {
+                fileAbsolutePath: { regex: "/contact/" }
+                fields: { language: { eq: $language } }
+            }
         ) {
             edges {
                 node {
