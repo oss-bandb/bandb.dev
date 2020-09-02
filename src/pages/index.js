@@ -34,7 +34,7 @@ IndexPage.propTypes = {
 export default injectIntl(IndexPage)
 
 export const query = graphql`
-    query SiteData($language: String) {
+    query IndexData($language: String) {
         navigation: dataYaml(fields: { language: { eq: $language } }) {
             items {
                 key

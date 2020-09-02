@@ -1,18 +1,12 @@
 import React from "react"
-import styled from "styled-components"
+import { graphql } from "gatsby"
+import { injectIntl } from "gatsby-plugin-intl"
 import { Layout, Section } from "@components"
-import { Container, theme } from "@styles"
 
-const StyledSection = styled(Section)`
-    background-color: ${theme.colorAccent};
-    display: flex;
-    justify-content: Center;
-    align-items: center;
-`
-
-const ImprintPage = () => {
+const ImprintPage = ({ data }) => {
+    const { navigation } = data
     return (
-        <Layout>
+        <Layout navItems={navigation.items}>
             <Section>
                 <div>
                     <h1>Impressum</h1>
@@ -344,4 +338,17 @@ const ImprintPage = () => {
     )
 }
 
-export default ImprintPage
+export default injectIntl(ImprintPage)
+
+export const query = graphql`
+    query ImprintData($language: String) {
+        navigation: dataYaml(fields: { language: { eq: $language } }) {
+            items {
+                key
+                name
+                to
+                main
+            }
+        }
+    }
+`

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
-import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import { theme, device } from "@styles"
 import { config } from "@configs"
 
