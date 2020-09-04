@@ -1,7 +1,9 @@
 import React from "react"
+import { useIntl, injectIntl } from "gatsby-plugin-intl"
 
 const NotFoundPage = () => {
-  return <div></div>
+    const intl = useIntl()
+    return <div>{intl.formatMessage({ id: "notfound.message" })}</div>
 }
 
-export default NotFoundPage
+export default injectIntl(NotFoundPage)

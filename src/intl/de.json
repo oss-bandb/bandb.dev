@@ -28,5 +28,8 @@
         "usefulLinks": {
             "title": "Nützliche Links"
         }
+    },
+    "notfound": {
+        "message": "Seite nicht gefunden."
     }
 }
