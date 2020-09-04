@@ -3,6 +3,9 @@ const path = require("path")
 import { config } from "./src/configs"
 
 module.exports = {
+    siteMetadata: {
+        siteUrl: config.metadata.siteUrl,
+    },
     plugins: [
         {
             resolve: `gatsby-plugin-gtag`,
@@ -20,6 +23,7 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
         `gatsby-transformer-yaml`,
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-intl`,
             options: {
