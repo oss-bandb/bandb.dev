@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { Link } from "gatsby-plugin-intl"
 import { Section } from "@components"
 import { theme } from "@styles"
 import scrollReveal from "@utils/scrollreveal"
@@ -15,7 +16,7 @@ const StyledSection = styled(Section)`
     text-align: center;
 `
 
-const StyledButton = styled.a`
+const StyledButton = styled(Link)`
     padding: 10px;
     margin-top: 5em;
     background-color: ${theme.primaryColor};
@@ -54,10 +55,7 @@ const Home = ({ data }) => {
         <StyledSection id="home">
             <Title ref={el => reveal.current.push(el)}>{title}</Title>
             <Subtitle ref={el => reveal.current.push(el)}>{subtitle}</Subtitle>
-            <StyledButton
-                href={`mailto:contact@bandb.dev`}
-                ref={el => reveal.current.push(el)}
-            >
+            <StyledButton to="/#contact" ref={el => reveal.current.push(el)}>
                 {action}
             </StyledButton>
         </StyledSection>

@@ -3,10 +3,20 @@
         "siteTitle": "Block & Block | Freelance Android developers",
         "siteDescription": "Block & Block is a freelancer association in the Ruhr area, North Rhine-Westphalia, Germany, which specializes in the development (and occasionally conception) of Android Apps.",
         "keywords": "Dennis Block, Gregor Block, Block und Block, Block, Android, freelance, software engineer, app developer"
-      
     },
     "branding": "Block & Block",
     "title": "Your freelance developer team.",
+    "contact": {
+        "placeholder": {
+            "name": "Name",
+            "email": "E-Mail",
+            "message": "Your message"
+        },
+        "subject": "bandb.dev - Contact form",
+        "success": "Thanks a lot! We have received your message. We will get back to you shortly.",
+        "failure": "Ooops! There was an error. Alternatively, you can also reach us at <a href=\"mailto:contact@bandb.dev\">contact@bandb.dev</a>",
+        "submit": "Send"
+    },
     "footer": {
         "contact": {
             "title": "Contact",

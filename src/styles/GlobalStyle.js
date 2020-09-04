@@ -6,10 +6,10 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   background-color: ${theme.backgroundColor};
   margin: 0;
   line-height: 1.5;
@@ -26,6 +26,7 @@ a {
   text-decoration-skip-ink: auto;
   color: ${theme.primaryColor};
   position: relative;
+  font-weight: bold;
   cursor: pointer;
   &:hover,
   &:focus {

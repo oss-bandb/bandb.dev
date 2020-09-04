@@ -6,6 +6,17 @@
     },
     "branding": "Block & Block",
     "title": "Ihre freiberuflichen Android-Entwickler.",
+    "contact": {
+        "placeholder": {
+            "name": "Name",
+            "email": "E-Mail",
+            "message": "Ihre Nachricht"
+        },
+        "subject": "bandb.dev - Kontaktformular",
+        "success": "Vielen Dank! Wir haben Ihre Nachricht erhalten. Wir melden uns in Kürze bei Ihnen.",
+        "failure": "Ooops! Da ist was schief gelaufen. Alternativ können sie uns auch unter <a href=\"mailto:contact@bandb.dev\">contact@bandb.dev</a> erreichen.",
+        "submit": "Senden"
+    },
     "footer": {
         "contact": {
             "title": "Kontakt",

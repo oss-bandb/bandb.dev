@@ -85,7 +85,7 @@ const Community = ({ data }) => {
 
     return (
         <StyledSection title={title} id="community">
-            <StyledContainer>
+            <StyledContainer ref={el => (reveal.current = el)}>
                 <StyledImage fluid={image.childImageSharp.fluid} alt={alt} />
                 <StyledDescription
                     dangerouslySetInnerHTML={{ __html: html }}
