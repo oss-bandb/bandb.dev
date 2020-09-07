@@ -6,7 +6,7 @@ content:
     - key: "Beratung"
       description: "Wir unterstützen Sie bei der Optimierung der Strategie für Ihr Projekt, indem wir Schwachstellen identifizieren, analysieren und Lösungen entwickeln."
     - key: "Konzeption"
-      description: "Eine unserer Stärken ist die nutzerorientierte Gestaltung von mobilen Apps. Unser Schwerpunkt liegt auf der Benutzerfreundlichkeit, um die bestmögliche Benutzererfahrung zu bieten."
+      description: "Eine weitere unserer Stärken ist die nutzerorientierte Gestaltung von mobilen Apps. Unser Schwerpunkt liegt auf der Benutzerfreundlichkeit, um die bestmögliche User-Experience zu bieten."
     - key: "Wartung"
-      description: "Unser Wartungsservice verbessert kontinuierlich die Qualität Ihrer Anwendungen nach dem Release, um Ihren Benutzern die bestmögliche User-Experience zu bieten."
+      description: "Unser Wartungsservice verbessert kontinuierlich die Qualität Ihrer Anwendungen nach dem Release, um Ihren Nutzern die bestmögliche User-Experience zu bieten."
 ---
