@@ -130,7 +130,6 @@ const Navigation = ({ navItems }) => {
                 </Brand>
 
                 <Container>
-                    <Language />
                     <TransitionGroup component={null}>
                         <CSSTransition classNames="fade" timeout={0}>
                             <HamburgerContainer onClick={toggleMenu}>
@@ -150,6 +149,7 @@ const Navigation = ({ navItems }) => {
                                 </li>
                             ))}
                     </NavList>
+                    <Language />
                 </Container>
             </Nav>
             <Menu navItems={navItems} menuOpen={open} toggleMenu={toggleMenu} />

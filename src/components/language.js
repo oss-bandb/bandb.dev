@@ -22,9 +22,10 @@ const LanguageList = styled.ol`
 const LanguageItem = styled.li`
     & + ::before {
         content: "|";
+        padding: 0 3px;
     }
     & > a {
-        color: ${props => (props.active ? theme.color : theme.color50)};
+        color: ${props => (props.active ? theme.color50 : theme.color)};
     }
 `
 
