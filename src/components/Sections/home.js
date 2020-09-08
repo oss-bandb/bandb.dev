@@ -55,9 +55,9 @@ const Home = ({ data }) => {
         <StyledSection id="home">
             <Title ref={el => reveal.current.push(el)}>{title}</Title>
             <Subtitle ref={el => reveal.current.push(el)}>{subtitle}</Subtitle>
-            <StyledButton to="/#contact" ref={el => reveal.current.push(el)}>
-                {action}
-            </StyledButton>
+            <p ref={el => reveal.current.push(el)}>
+                <StyledButton to="/#contact">{action}</StyledButton>
+            </p>
         </StyledSection>
     )
 }
