@@ -45,6 +45,8 @@ const Skill = styled.li`
 
 const StyledContent = styled.div`
     padding-bottom: 45px;
+    text-align: justify;
+    hyphens: auto;
 `
 
 const About = ({ data, profiles }) => {
