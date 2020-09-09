@@ -2,7 +2,7 @@ import React, { useState, forwardRef } from "react"
 import styled from "styled-components"
 import { useForm } from "react-hook-form"
 import { useIntl } from "gatsby-plugin-intl"
-import { theme } from "@styles"
+import { theme, device } from "@styles"
 
 const StyledContainer = styled.div`
     display: flex;
@@ -11,22 +11,32 @@ const StyledContainer = styled.div`
 `
 
 const StyledForm = styled.form`
-    width: 50%;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-bottom: 48px;
+
+    @media screen and (${device.largeUp}) {
+        & + & {
+            margin-left: 16px;
+        }
+    }
 `
 
 const Container = styled.div`
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-content: space-between;
+    flex-direction: column;
+
+    @media ${device.largeUp} {
+        flex-direction: row;
+    }
 `
 
 const StyledInput = styled.input`
     width: 100%;
-    flex-grow: 1;
     padding: 12px;
     border-radius: 4px;
     box-sizing: border-box;
@@ -34,13 +44,16 @@ const StyledInput = styled.input`
     margin-bottom: 16px;
     border: ${prop => (prop.invalid ? "2px solid red" : "0")};
 
-    & + & {
-        margin-left: 16px;
+    @media ${device.largeUp} {
+        width: 50%;
+        & + & {
+            margin-left: 16px;
+        }
     }
 `
 
 const StyledTextarea = styled.textarea`
-    width: 100%;
+    min-width: 400px;
     padding: 12px;
     border-radius: 4px;
     box-sizing: border-box;
