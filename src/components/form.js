@@ -17,12 +17,6 @@ const StyledForm = styled.form`
     justify-content: center;
     align-items: center;
     margin-bottom: 48px;
-
-    @media screen and (${device.largeUp}) {
-        & + & {
-            margin-left: 16px;
-        }
-    }
 `
 
 const Container = styled.div`

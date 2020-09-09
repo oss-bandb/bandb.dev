@@ -13,7 +13,7 @@ const StyledContainer = styled.div`
     width: 300px;
     padding: 15px;
 
-    @media screen and (${device.smallDown}) {
+    @media ${device.smallDown} {
         &:not(:last-child) {
             padding-bottom: 32px;
         }
