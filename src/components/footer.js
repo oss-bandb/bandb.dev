@@ -36,6 +36,7 @@ const CopyrightContainer = styled.div`
     align-items: center;
     background-color: ${theme.primaryColor};
     padding: 0.8em;
+    text-align: center;
 `
 
 const LinkList = styled.ul`
@@ -127,7 +128,6 @@ const Footer = ({ links }) => {
                     . All Rights Reserved.
                 </div>
                 <div>
-                    {" "}
                     Designed by <FormattedMessage id="branding" />
                 </div>
             </CopyrightContainer>
