@@ -2,7 +2,7 @@
 title: 'SmartHome "LED by AEG"'
 id: 2
 location: "Germany"
-customer: "MexIt GmbH"
+customer: "Mex It GmbH"
 skills:
     - Java
     - Bluetooth LE

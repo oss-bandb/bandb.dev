@@ -2,7 +2,7 @@
 title: "Fitness"
 id: 1
 location: "Germany"
-customer: "MexIt GmbH"
+customer: "Mex It GmbH"
 skills:
     - Java
     - SQLite, ORM
