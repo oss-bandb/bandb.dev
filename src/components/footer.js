@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
+import { FormattedMessage, Link } from "gatsby-plugin-intl"
 import { theme, device } from "@styles"
 import { config } from "@configs"
 
@@ -69,7 +69,6 @@ const Brand = styled.h3`
 `
 
 const Footer = ({ links }) => {
-    const intl = useIntl()
     const startCopyrightYear = "2019"
     const currentCopyrightYear = new Date().getFullYear()
     return (

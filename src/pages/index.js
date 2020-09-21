@@ -2,13 +2,22 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { injectIntl } from "gatsby-plugin-intl"
-import { Layout, Home, About, Services, Community, Contact } from "@components"
+import {
+    Layout,
+    Home,
+    About,
+    Services,
+    Community,
+    Contact,
+    Projects,
+} from "@components"
 
 const IndexPage = ({ data }) => {
     const {
         home,
         about,
         profiles,
+        projects,
         services,
         community,
         contact,
@@ -19,6 +28,7 @@ const IndexPage = ({ data }) => {
         <Layout navItems={navigation.items}>
             <Home data={home.edges} />
             <About data={about.edges} profiles={profiles.edges} />
+            <Projects projects={projects.edges} />
             <Services data={services.edges} />
             <Community data={community.edges} />
             <Contact data={contact.edges} />
@@ -102,6 +112,26 @@ export const query = graphql`
                             icon
                         }
                     }
+                }
+            }
+        }
+        projects: allMarkdownRemark(
+            filter: {
+                fileAbsolutePath: { glob: "**/about/projects/**/*md" }
+                fields: { language: { eq: $language } }
+            }
+            sort: { fields: frontmatter___id, order: DESC }
+        ) {
+            edges {
+                node {
+                    frontmatter {
+                        skills
+                        title
+                        range
+                        customer
+                        location
+                    }
+                    html
                 }
             }
         }

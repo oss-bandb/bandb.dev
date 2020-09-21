@@ -6,6 +6,9 @@
     },
     "branding": "Block & Block",
     "title": "Ihre freiberuflichen Android-Entwickler.",
+    "about": {
+        "projectsTitle": "Unsere letzten Projekte"
+    },
     "contact": {
         "placeholder": {
             "name": "Name",

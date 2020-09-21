@@ -24,6 +24,7 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-transformer-yaml`,
         `gatsby-plugin-sitemap`,
+        `gatsby-plugin-sass`,
         {
             resolve: `gatsby-plugin-intl`,
             options: {

@@ -48,7 +48,6 @@ const NavList = styled.ol`
 
     @media ${device.largeDown} {
         display: none;
-        background-color: red;
     }
 `
 

@@ -6,6 +6,9 @@
     },
     "branding": "Block & Block",
     "title": "Your freelance developer team.",
+    "about": {
+        "projectsTitle": "Our recent projects"
+    },
     "contact": {
         "placeholder": {
             "name": "Name",

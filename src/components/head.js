@@ -1,6 +1,6 @@
 import React from "react"
 import Helmet from "react-helmet"
-import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl } from "gatsby-plugin-intl"
 import ogImage from "@images/og.png"
 import { config } from "@configs"
 import favicon from "@images/favicon.ico"
