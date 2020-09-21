@@ -31,7 +31,6 @@ const StyledProjectSwiper = styled(ProjectSwiper)`
     }
 `
 const Projects = ({ projects }) => {
-    console.log("prohecs", projects)
     return (
         <Content>
             <ProjectsTitle>
