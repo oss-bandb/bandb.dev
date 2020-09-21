@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
-import { Section, Profile, ProjectList, ProjectSwiper } from "@components"
+import { Section, Profile } from "@components"
 import { theme } from "@styles"
 import scrollReveal from "@utils/scrollreveal"
 import { config } from "@configs"

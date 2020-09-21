@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
+import scrollReveal from "@utils/scrollreveal"
+import { config } from "@configs"
 import { ProjectList, ProjectSwiper, Section } from "@components"
 import { theme, device } from "@styles"
 
@@ -31,13 +33,24 @@ const StyledProjectSwiper = styled(ProjectSwiper)`
     }
 `
 const Projects = ({ projects }) => {
+    const reveal = useRef([])
+    useEffect(() =>
+        reveal.current.forEach((ref, i) =>
+            scrollReveal.reveal(
+                ref,
+                config.scrollReveal(i * config.scrollRevealDelay)
+            )
+        )
+    )
     return (
         <Content>
-            <ProjectsTitle>
+            <ProjectsTitle ref={el => reveal.current.push(el)}>
                 <FormattedMessage id="about.projectsTitle" />
             </ProjectsTitle>
-            <StyledProjectList projects={projects} />
-            <StyledProjectSwiper projects={projects} />
+            <div ref={el => reveal.current.push(el)}>
+                <StyledProjectList projects={projects} />
+                <StyledProjectSwiper projects={projects} />
+            </div>
         </Content>
     )
 }
