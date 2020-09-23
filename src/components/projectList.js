@@ -44,6 +44,11 @@ const StyledTabButton = styled.button`
         color: ${theme.backgroundColor};
         background-color: ${theme.color};
     }
+
+    &:focus {
+        outline: none;
+    }
+
     color: ${props => (props.isActive ? theme.color : theme.color50)};
 
     @media ${device.mediumDown} {
