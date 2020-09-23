@@ -17,7 +17,6 @@ const StyledProfiles = styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    margin: 2em;
 `
 
 const SkillsContainer = styled.ul`
