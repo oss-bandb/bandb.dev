@@ -16,6 +16,10 @@ const Head = () => {
             <link rel="shortcut icon" href={favicon} />
             <link rel="canonical" href={config.metadata.siteUrl} />
             <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <meta
                 name="description"
                 content={intl.formatMessage({ id: "metadata.siteDescription" })}
             />

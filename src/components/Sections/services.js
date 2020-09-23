@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Section, Service } from "@components"
 import scrollReveal from "@utils/scrollreveal"
 import { config } from "@configs"
+import { device } from "@styles"
 
 const StyledSection = styled(Section)`
     display: flex;
@@ -13,8 +14,12 @@ const StyledSection = styled(Section)`
 
 const StyledGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
+
+    @media ${device.mediumDown} {
+        grid-template-columns: 1fr;
+    }
 `
 
 const Services = ({ data }) => {

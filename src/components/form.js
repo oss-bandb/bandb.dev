@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
 `
 
 const StyledForm = styled.form`
-    min-width: 400px;
+    /* min-width: 400px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media ${device.largeUp} {
+    @media ${device.smallUp} {
         flex-direction: row;
     }
 `
@@ -38,7 +38,7 @@ const StyledInput = styled.input`
     margin-bottom: 16px;
     border: ${prop => (prop.invalid ? "2px solid red" : "0")};
 
-    @media ${device.largeUp} {
+    @media ${device.smallUp} {
         width: 50%;
         & + & {
             margin-left: 16px;
@@ -47,7 +47,8 @@ const StyledInput = styled.input`
 `
 
 const StyledTextarea = styled.textarea`
-    min-width: 400px;
+    /* min-width: 400px; */
+    width: 100%;
     padding: 12px;
     border-radius: 4px;
     box-sizing: border-box;

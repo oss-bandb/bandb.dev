@@ -26,7 +26,6 @@ const StyledContainer = styled.div`
     height: 100%;
     background-color: ${theme.secondaryColor};
     max-width: 800px;
-    min-width: 400px;
 `
 const StyledDescription = styled.div`
     text-align: center;

@@ -12,7 +12,6 @@ export { default as Form } from "./form"
 export { default as ProjectList } from "./projectList"
 export { default as Project } from "./project"
 export { default as ProjectSwiper } from "./projectSwiper"
-export { default as Projects } from "./projects"
 
 // Sections
 export { default as About } from "./Sections/about"
@@ -20,3 +19,4 @@ export { default as Community } from "./Sections/community"
 export { default as Contact } from "./Sections/contact"
 export { default as Home } from "./Sections/home"
 export { default as Services } from "./Sections/services"
+export { default as Projects } from "./Sections/projects"

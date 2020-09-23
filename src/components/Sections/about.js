@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
 import { Section, Profile } from "@components"
-import { theme } from "@styles"
+import { theme, device } from "@styles"
 import scrollReveal from "@utils/scrollreveal"
 import { config } from "@configs"
 
@@ -22,11 +22,18 @@ const StyledProfiles = styled.div`
 
 const SkillsContainer = styled.ul`
     display: grid;
-    grid-template-columns: repeat(2, minmax(140px, 200px));
-    overflow: hidden;
+    grid-template-columns: repeat(2, 0.5fr);
+    /* overflow: hidden; */
     padding: 0;
     margin: 20px 0 0 0;
     list-style: none;
+    @media ${device.smallDown} {
+        grid-template-columns: 1fr;
+    }
+
+    @media ${device.mediumUp} {
+        grid-template-columns: repeat(2, minmax(140px, 200px));
+    }
 `
 
 const Skill = styled.li`
@@ -45,8 +52,13 @@ const Skill = styled.li`
 
 const StyledContent = styled.div`
     padding-bottom: 45px;
-    text-align: justify;
-    hyphens: auto;
+`
+
+const Content = styled.div`
+    @media ${device.smallUp} {
+        text-align: justify;
+        hyphens: auto;
+    }
 `
 
 const About = ({ data, profiles }) => {
@@ -77,7 +89,7 @@ const About = ({ data, profiles }) => {
             </StyledProfiles>
 
             <StyledContent ref={el => reveal.current.push(el)}>
-                <div dangerouslySetInnerHTML={{ __html: html }} />
+                <Content dangerouslySetInnerHTML={{ __html: html }}></Content>
                 <SkillsContainer>
                     {skills &&
                         skills.map((skill, i) => (
