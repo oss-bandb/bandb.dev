@@ -7,7 +7,7 @@ import { Menu, Language } from "@components"
 
 const StyledContainer = styled.header`
     display: flex;
-    position: fixed;
+    position: sticky;
     width: 100%;
     height: ${theme.navHeight};
     top: 0;

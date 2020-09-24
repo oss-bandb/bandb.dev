@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { theme } from "@styles"
 
 const StyledSection = styled.section`
     display: flex;
@@ -8,6 +9,7 @@ const StyledSection = styled.section`
     width: 100%;
     padding: 1.5rem;
     margin-top: 5rem;
+    scroll-margin-top: ${theme.navHeight};
 `
 
 const SectionTitle = styled.h2`
