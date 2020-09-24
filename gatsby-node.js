@@ -1,6 +1,4 @@
-import grayMatter from "gray-matter"
 import { createFilePath } from "gatsby-source-filesystem"
-import { config } from "./src/configs"
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
