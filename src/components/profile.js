@@ -10,7 +10,6 @@ const StyledContainer = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 300px;
     padding: 15px;
 
     @media ${device.smallDown} {
