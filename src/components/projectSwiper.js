@@ -5,9 +5,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Project } from "@components"
 require("swiper/swiper.scss")
-require("swiper/components/navigation/navigation.scss")
 require("swiper/components/pagination/pagination.scss")
-require("swiper/components/scrollbar/scrollbar.scss")
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
@@ -21,7 +19,6 @@ const ProjectSwiper = ({ projects, className }) => {
         <StyledSwiper
             spaceBetween={50}
             pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
             className={className}
         >
             {projects.map((project, i) => (

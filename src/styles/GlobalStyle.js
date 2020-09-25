@@ -42,24 +42,5 @@ a {
     color: ${theme.color};
   }
 }
-
-ul {
-    &.fancy-list {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      li {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 10px;
-        &:before {
-          content: '-';
-          position: absolute;
-          left: 0;
-          color: ${theme.colorAccent};
-        }
-      }
-    }
-  }
 `
 export default GlobalStyle
