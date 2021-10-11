@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { Head, Navigation, Footer } from "@components"
 import { GlobalStyle } from "@styles"
-import CookieConsent from "react-cookie-consent"
 
 const Layout = ({ children, navItems }) => {
     useEffect(() => {
@@ -23,14 +22,6 @@ const Layout = ({ children, navItems }) => {
             <Navigation navItems={navItems} />
             {children}
             <Footer links={navItems} />
-            <CookieConsent
-                location="bottom"
-                buttonText="Accept"
-                declineButtonText="Decline"
-                cookieName="gatsby-plugin-google-analytics-gdpr_cookies-enabled"
-            >
-                This website uses cookies to enhance the user experience.
-            </CookieConsent>
         </>
     )
 }
