@@ -128,7 +128,6 @@ export const query = graphql`
                         skills
                         title
                         range
-                        customer
                         location
                     }
                     html
