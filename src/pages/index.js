@@ -162,18 +162,22 @@ export const query = graphql`
                 node {
                     frontmatter {
                         title
-                        link
-                        icon
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 700, quality: 90) {
-                                    ...GatsbyImageSharpFluid_withWebp
+                        content {
+                            key
+                            link
+                            icon
+                            description
+                            image {
+                                childImageSharp {
+                                    fluid(maxWidth: 700, quality: 90) {
+                                        ...GatsbyImageSharpFluid_withWebp
+                                    }
                                 }
                             }
+                            alt
                         }
-                        alt
+                        
                     }
-                    html
                 }
             }
         }

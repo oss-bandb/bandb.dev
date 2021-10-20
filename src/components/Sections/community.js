@@ -1,13 +1,9 @@
-import React, { useRef, useState, useEffect } from "react"
-import PropTypes from "prop-types"
+import React, { useRef, useEffect } from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
-import { Section } from "@components"
-import { theme } from "@styles"
-import { FormattedIcon } from "@components/icons"
+import { Section, OssProjekt } from "@components"
 import scrollReveal from "@utils/scrollreveal"
-import { splitGithubInfo } from "@utils"
 import { config } from "@configs"
+import { device } from "@styles"
 
 const StyledSection = styled(Section)`
     display: flex;
@@ -15,109 +11,44 @@ const StyledSection = styled(Section)`
     align-items: center;
     width: 100%;
 `
-const StyledContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    position: relative;
-    padding: 2rem 1.75rem;
-    height: 100%;
-    background-color: ${theme.secondaryColor};
-    max-width: 800px;
-`
-const StyledDescription = styled.div`
-    text-align: center;
-`
-const StyledImage = styled(Img)`
-    width: 100%;
-`
-const StyledGitHubLink = styled.a`
-    text-decoration: none;
-    color: ${theme.color};
-    padding: 10px;
-`
-const StyledGitHubInfo = styled.div`
-    margin-top: 10px;
-    & > span {
-        display: inline-flex;
-        align-items: flex-end;
-        margin: 0 7px;
-    }
-    svg {
-        display: inline-block;
-        height: 22px;
-        width: auto;
-        margin-right: 5px;
-        fill: ${theme.color};
+
+const StyledGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 800px));
+    grid-gap: 15px;
+
+    @media ${device.mediumDown} {
+        grid-template-columns: 1fr;
     }
 `
 
 const Community = ({ data }) => {
-    const { frontmatter, html } = data[0].node
-    const { title, image, alt, link } = frontmatter
-    const [githubInfo, setGitHubInfo] = useState({
-        stars: null,
-        forks: null,
-    })
-
-    const teamLink = splitGithubInfo(link)
-    useEffect(() => {
-        fetch("https://api.github.com/repos/" + teamLink)
-            .then(response => response.json())
-            .then(json => {
-                const { stargazers_count, forks_count } = json
-                setGitHubInfo({
-                    stars: stargazers_count,
-                    forks: forks_count,
-                })
-            })
-            .catch(e => console.error(e))
-    }, [])
-
-    const reveal = useRef(null)
+    const { title, content } = data[0].node.frontmatter
+    const reveal = useRef([])
     useEffect(
-        () => scrollReveal.reveal(reveal.current, config.scrollReveal()),
+        () =>
+            reveal.current.forEach((ref, i) =>
+                scrollReveal.reveal(
+                    ref,
+                    config.scrollReveal(i * config.scrollRevealDelay)
+                )
+            ),
         []
     )
-
     return (
         <StyledSection title={title} id="community">
-            <StyledContainer ref={el => (reveal.current = el)}>
-                <StyledImage fluid={image.childImageSharp.fluid} alt={alt} />
-                <StyledDescription
-                    dangerouslySetInnerHTML={{ __html: html }}
-                ></StyledDescription>
-                <StyledGitHubLink
-                    href={link}
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                >
-                    {githubInfo.stars && githubInfo.forks && (
-                        <StyledGitHubInfo>
-                            <span>
-                                <FormattedIcon name="github" />
-                                <span>GitHub</span>
-                            </span>
-                            <span>
-                                <FormattedIcon name="star" />
-                                <span>{githubInfo.stars.toLocaleString()}</span>
-                            </span>
-                            <span>
-                                <FormattedIcon name="fork" />
-                                <span>{githubInfo.forks.toLocaleString()}</span>
-                            </span>
-                        </StyledGitHubInfo>
-                    )}
-                </StyledGitHubLink>
-            </StyledContainer>
+            <StyledGrid>
+                {content.map((ossProjekt, i) => (
+                    // Index as key is generally a bad idea, but shouldn't matter in this case
+                    <OssProjekt
+                        key={i}
+                        ossProjekt={ossProjekt}
+                        ref={el => (reveal.current[i] = el)}
+                    ></OssProjekt>
+                ))}
+            </StyledGrid>
         </StyledSection>
     )
-}
-
-Community.propTypes = {
-    githubInfo: PropTypes.object,
 }
 
 export default Community
