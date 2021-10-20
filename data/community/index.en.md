@@ -10,7 +10,7 @@ content:
     - key: "DesignStudio"
       link: "https://github.com/oss-bandb/DesignStudio"
       icon: "github"
-      image: ./graphview_logo.png
+      image: ./designstudio_logo.png
       alt: "GraphView Logo"
       description: "An Android design showcase project for learning and inspiration purposes."
 ---
