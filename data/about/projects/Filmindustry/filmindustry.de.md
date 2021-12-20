@@ -1,7 +1,7 @@
 ---
 title: "Filmwirtschaft"
 id: 7
-range: "seit Juli 2021"
+range: "Juli 2021 - November 2021"
 location: "Deutschland"
 skills:
     - Kotlin
