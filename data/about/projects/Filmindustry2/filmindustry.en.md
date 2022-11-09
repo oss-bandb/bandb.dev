@@ -1,7 +1,7 @@
 ---
 title: "Film industry"
 id: 8
-range: "since August 2021"
+range: "August 2021 -  February 2022"
 location: "Germany"
 skills:
     - Kotlin

@@ -9,7 +9,9 @@ skills:
     - Material Design
 ---
 
-<p>Wir konzipieren und entwickeln komplexe benutzerorientierte Anwendungen mit ansprechenden Design für die Android-Plattform. Clean Code ist unsere Stärke, unsere robuste Codebasis ist für zukünftige Entwicklungszyklen einfach zu erweitern, zu warten und zu testen.</p>
-<p>Unser Weg zum IT-Experten begann mit der Ausbildung zum informationstechnologischen Assistenten. Anschließend schlossen wir mit einem Bachelor- und Master in Angewandter Informatik ab. In dieser Zeit haben wir viele verschiedene Projekte gemeinsam durchgeführt, die meisten davon waren Android-bezogen. Während des Vollzeitstudiums haben wir nebenbei als Android-Entwickler gearbeitet.</p>
-<p>Wir lieben Open Source und haben beschlossen, der Community etwas zurückzugeben. Dazu mehr im Abschnitt Community weiter unten.</p>
-<p>Seit Januar 2019 starteten wir als Android-Freelancer durch. Wir arbeiten mit den gängigsten Libraries und Tools und halten uns über neue Technologien stets auf dem Laufenden. Als Zusammenfassung:</p>
+<div><h1>Hallo,</h1></div>
+<div>danke für Ihr Interesse an uns! Wir sind positiv eingestellt, selbstständiges Arbeiten gewohnt und arbeiten gerne als Team zusammen. Wir konzipieren und entwickeln Anwendungen nach Ihren Vorgaben für die Android-Plattform, dabei behalten wir Ihre übergeordnete Ziele im Auge und bereichern Ihr Produkt mit eigenen Ideen, um die User Experiences zu verbessern.</div>
+<div>Wie arbeiten wir? Wir sind ein Freelancer Zusammenschluss und passen uns Ihren Bedürfnissen an, sodass wir auf Wunsch durch flexible Arbeitsaufteilung auf bis zu 200% skalieren können. Zudem steigern wir die Produktivität, indem wir in Paarprogrammierung übergehen, wenn mal ein zweites paar Augen notwendig wird. Am Ende erhalten Sie unkompliziert nur eine Rechnung über die gesamt geleisteten Stunden.</div>
+<div>Seit 2009 entwickeln wir bereits Apps für die Android-Plattform und sind vertraut mit den etablierten Best Practice Ansätzen sowie den Google Guidelines. Wir folgen den Clean Code Prinzipien, damit Ihre Codebasis für zukünftige Entwicklungszyklen einfach zu erweitern, zu warten und zu testen ist.</div>
+<div>Wir lieben Open Source und haben beschlossen, der Community etwas zurückzugeben. Dazu mehr im Abschnitt Community weiter unten.</div>
+<div>Seit 2019 starteten wir als Android-Freelancer durch. Wir arbeiten mit den gängigsten Libraries und Tools und halten uns über neue Technologien stets auf dem Laufenden. Als Zusammenfassung:</div>

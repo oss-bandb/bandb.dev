@@ -1,5 +1,5 @@
 ---
-title: "Health Care"
+title: "Health care"
 id: 5
 range: "February 2021 - July 2021"
 location: "Germany"

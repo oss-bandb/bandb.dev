@@ -3,13 +3,15 @@ title: "Who we are"
 skills:
     - Kotlin / Java
     - Jetpack
-    - Dagger
+    - Dagger / Koin
     - RxJava / Coroutines
     - MVVM / MVP / MVI
     - Material Design
 ---
 
-<p>We design and develop beautiful user-oriented apps for the Android platform. Clean code is our passion, our robust codebase is easy to extend, maintain and test for future development cycles.</p>
-<p>Our journey to become IT-professionals started at the vocational school to become an information technology assistant. Afterwards we graduated with a Bachelor's and Master's degree in Applied Computer Science. We did a lot of different projects together, most of them were Android related. While studying fulltime we worked as Android developers on the side and gained even more experience.</p>
-<p>We love open source and have decided to contribute back to the community. Check out the Community section below. </p>
-<p>Since January 2019 we started as Android freelancers. We attempt to use the latest cutting edge libraries and tools. As a summary:</p>
+<div><h1>Hello,</h1></div>
+<div>thank you for your interest in us! We have a positive attitude, are used to working independently and enjoy working together as a team. We design and develop applications according to your specifications for the Android platform, keeping your overall goals in mind and enriching your product with our own ideas to improve the user experiences.</div>
+<div>How do we work? We are a freelance partnership and adapt to your needs, so if you wish we can scale up to 200% through flexible work sharing. We also increase productivity by switching to pair programming when a second pair of eyes is needed. In the end, you will receive a single invoice for the total hours worked.</div>
+<div>We have been developing apps for the Android platform since 2009 and are familiar with established best practices as well as Google Guidelines. We follow clean code principles so that your code base is easy to extend, maintain and test for future development cycles.</div>
+<div>We love open source and have decided to give something back to the community. More about this in the Community section below.</div>
+<div>We started as Android freelancers in 2019. We work with the most popular libraries and tools and always keep up to date with new technologies. As a summary:</div>

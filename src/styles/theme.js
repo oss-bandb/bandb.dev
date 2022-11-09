@@ -22,15 +22,15 @@ const theme = {
     // backgroundColor: "#231A23",
     // secondaryColor: "#2F232F",
 
-    primaryColor: "#1B81C5",
-    backgroundColor: "#0C3B5A",
-    secondaryColor: "#0F476C",
+    // primaryColor: "#1B81C5",
+    // backgroundColor: "#0C3B5A",
+    // secondaryColor: "#0F476C",
 
-    // primaryColor: "#555555",
-    // backgroundColor: "#000000",
-    // secondaryColor: "#111111",
+    primaryColor: "#555555",
+    backgroundColor: "#000000",
+    secondaryColor: "#111111",
 
-    // color: "#000000",
+//color: "#000000",
     // primaryColor: "#1B81C5",
     // backgroundColor: "#ffffff",
     // secondaryColor: "#eeeeee",

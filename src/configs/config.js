@@ -1,9 +1,7 @@
 const config = {
     metadata: {
         siteUrl: "https://www.bandb.dev",
-        siteLanguage: "en_US",
-        googleTrackingId: "UA-145084202-1",
-        googleVerification: "EL-OYOnS6PHp1JGCTYRXF8PxHIV3NISKGg9hHKc-Pac",
+        siteLanguage: "de_DE",
     },
     contactMail: "contact@BandB.dev",
     footer: {
